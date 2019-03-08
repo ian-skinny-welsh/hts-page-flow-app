@@ -20,4 +20,5 @@ inner join
 where
     pf.WEBSITE_ID = :website_id
     and pf.action = :action
+    and wp.URI = :uri
 

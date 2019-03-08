@@ -8,6 +8,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import net.atos.tfc.pageflowtests.GenerateTests;
+import net.bytebuddy.agent.builder.AgentBuilder;
+
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -54,6 +56,7 @@ public class Stepdefs
 		String sql = GenerateTests.readSQL("src/test/resources/when.sql");
 		List<Object[]> results = entityManager
 				.createNativeQuery(sql)
+				.setParameter("uri", fromPage)
 				.setParameter("website_id", fromWebsiteID)
 				.setParameter("action", action)
 				.getResultList();
