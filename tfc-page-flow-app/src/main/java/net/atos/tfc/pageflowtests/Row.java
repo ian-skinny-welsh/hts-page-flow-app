@@ -39,6 +39,8 @@ public class Row
 		this.option = option;
 	}
 
+	public Integer getOptionI()	{return Integer.valueOf(option);}
+
 	public String getRule()
 	{
 		return rule;

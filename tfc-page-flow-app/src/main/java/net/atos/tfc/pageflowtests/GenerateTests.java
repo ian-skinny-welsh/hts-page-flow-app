@@ -1,11 +1,9 @@
 package net.atos.tfc.pageflowtests;
 
 import freemarker.core.ParseException;
-import freemarker.template.Configuration;
-import freemarker.template.MalformedTemplateNameException;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
-import freemarker.template.TemplateExceptionHandler;
+import freemarker.ext.beans.BeansWrapper;
+import freemarker.template.*;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,9 +12,8 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -43,10 +40,10 @@ public class GenerateTests
 		try {
 			GenerateTests gt = new GenerateTests();
 
-			gt.setBaseDirectory("src/test/resources/features/");
-			gt.setPageFlowSQLPath("src/main/resources/cfg_page_flow.sql");
+			gt.setBaseDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/features/");
+			gt.setPageFlowSQLPath("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/main/resources/cfg_page_flow.sql");
 			gt.setFeatureTemplate("template.feature");
-			gt.setTemplateDirectory("src/test/resources");
+			gt.setTemplateDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources");
 			gt.generate();
 		}
 		finally {
@@ -78,16 +75,18 @@ public class GenerateTests
 	public void processWebsite(int websiteID, String websiteName)
 			throws ParseException, IOException, MalformedTemplateNameException, TemplateException
 	{
-
 		List<Object[]> results = emf.createEntityManager()
 				.createNativeQuery(pageFlowSQL)
 				.setParameter("website_id", websiteID)
 				.getResultList();
 
+		Comparator<Row> rowComparator = Comparator.comparing(Row::getAction).thenComparing(Row::getOptionI);;
+
 		Map<String, List<Row>> rowsMap = results
 				.stream()
 				.map(row -> createRow(row))
-				.collect(Collectors.groupingBy(Row::getFromNameNoSpaces));
+				.sorted(rowComparator)
+				.collect(Collectors.groupingBy(Row::getUri));
 
 		for (String fromName : rowsMap.keySet())
 		{
@@ -115,13 +114,17 @@ public class GenerateTests
 			Map<String, Object> root = new HashMap<>();
 			root.put("websiteName", websiteName);
 			root.put("rows", rows);
+
+			DefaultObjectWrapper wrapper = new DefaultObjectWrapper(Configuration.VERSION_2_3_27);
+			TemplateModel statics = wrapper.getStaticModels();
+			root.put("statics",statics);
 			temp.process(root, out);
+
 		}
 	}
 
 	public static String readSQL(String sqlFile) throws IOException
 	{
-
 		String sqlSource = FileUtils.readFileToString(new File(sqlFile), "UTF-8");
 		return sqlSource.replaceAll("(\\r|\\n|\\r\\n)+", " ");
 	}

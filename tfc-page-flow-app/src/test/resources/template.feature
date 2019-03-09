@@ -14,3 +14,18 @@ Examples:
 <#list rows as row>
     | ${row.fromWebsite} | ${row.uri} | ${row.rule} | ${row.action} | ${row.toWebsite} | ${row.toURI} |
 </#list>
+
+<#assign var=statics['net.atos.tfc.pageflowtests.Utility'].groupByAction(rows)/>
+<#list var as propName, propValue>
+    <#if propValue?size != 0>
+Scenario: The next page from website ${websiteName} with action ${propName} rules are ordered correctly
+    Given the user has visited "${websiteName}" website
+    And the user is on page "${propValue[0].uri}}"
+    When the user clicks "${propName}"
+    Then these rules are executed in order:
+    <#list propValue as row>
+        | ${row.rule} |
+    </#list>
+
+    </#if>
+</#list>
