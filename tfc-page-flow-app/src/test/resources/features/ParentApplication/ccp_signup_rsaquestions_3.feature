@@ -1,4 +1,4 @@
-Feature: Is the page correct?
+Feature: Is the Parent Application /ccp/signup/rsaquestions/3 page navigation correct?
   Is the correct page returned
 
 Background:
@@ -6,7 +6,6 @@ Background:
     And the user is on page "/ccp/signup/rsaquestions/3"
 
 Scenario Outline: The next page from website Parent Application is correctly displayed
-    Given the user has visited "<fromWebsite>" website
 	And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website

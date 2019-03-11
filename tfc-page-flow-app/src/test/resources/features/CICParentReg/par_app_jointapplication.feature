@@ -1,4 +1,4 @@
-Feature: Is the page correct?
+Feature: Is the CIC Parent Reg /par/app/jointapplication page navigation correct?
   Is the correct page returned
 
 Background:
@@ -6,7 +6,6 @@ Background:
     And the user is on page "/par/app/jointapplication"
 
 Scenario Outline: The next page from website CIC Parent Reg is correctly displayed
-    Given the user has visited "<fromWebsite>" website
 	And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
