@@ -1,7 +1,6 @@
 package net.atos.tfc.pageflowtests;
 
 import freemarker.core.ParseException;
-import freemarker.ext.beans.BeansWrapper;
 import freemarker.template.*;
 
 import java.io.File;
@@ -13,7 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -80,17 +78,17 @@ public class GenerateTests
 				.setParameter("website_id", websiteID)
 				.getResultList();
 
-		Comparator<Row> rowComparator = Comparator.comparing(Row::getAction).thenComparing(Row::getOptionI);;
+		Comparator<Row> rowComparator = Comparator.comparing(Row::getAction).thenComparing(Row::getOptionI);
 
 		Map<String, List<Row>> rowsMap = results
 				.stream()
-				.map(row -> createRow(row))
+				.map(this::createRow)
 				.sorted(rowComparator)
 				.collect(Collectors.groupingBy(Row::getUri));
 
-		for (String fromName : rowsMap.keySet())
+		for (Map.Entry<String,List<Row>> entry : rowsMap.entrySet())
 		{
-			generateFeatues(websiteID, rowsMap.get(fromName), fromName, websiteName);
+			generateFeatues(websiteID, entry.getValue(), entry.getKey(), websiteName);
 		}
 	}
 
