@@ -4,10 +4,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import net.atos.tfc.pageflowtests.GenerateTests;
+import net.atos.tfc.pageflowtests.Row;
 import net.bytebuddy.agent.builder.AgentBuilder;
 
 import static org.hamcrest.CoreMatchers.hasItem;
@@ -75,5 +77,11 @@ public class Stepdefs
 	public void the_page_is_displayed(String nextPage) throws Exception {
 
 		assertThat(nextPages, hasItem(nextPage));
+	}
+
+	@Then("^these rules are executed in order:")
+	public void these_rules_are_executed_in_order(List<String> rules)
+	{
+
 	}
 }
