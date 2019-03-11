@@ -18,4 +18,9 @@ public class Utility {
                 .filter(r-> ""!=r.getRule())
                 .collect(Collectors.groupingBy(Row::getAction));
     }
+
+    public static String tagString(String string)
+    {
+        return string.replaceAll(" ", "_").toLowerCase();
+    }
 }
