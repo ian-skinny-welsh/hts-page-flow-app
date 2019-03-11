@@ -103,6 +103,13 @@ public class GenerateTests
 		}
 
 		String pageName = fromName.replaceAll(" ", "_").replaceAll("/", "_");
+		if(pageName.length()>1 && "_".equals(pageName.substring(0,1)))
+		{
+			pageName=pageName.replaceFirst("_", "");
+		}
+
+		DefaultObjectWrapper wrapper = new DefaultObjectWrapper(Configuration.VERSION_2_3_27);
+		TemplateModel statics = wrapper.getStaticModels();
 
 		try (FileOutputStream fileOutputStream = new FileOutputStream(
 				dirPathObj.toString() + "/"+ pageName +".feature"))
@@ -111,10 +118,8 @@ public class GenerateTests
 
 			Map<String, Object> root = new HashMap<>();
 			root.put("websiteName", websiteName);
+			root.put("fromUri", fromName);
 			root.put("rows", rows);
-
-			DefaultObjectWrapper wrapper = new DefaultObjectWrapper(Configuration.VERSION_2_3_27);
-			TemplateModel statics = wrapper.getStaticModels();
 			root.put("statics",statics);
 			temp.process(root, out);
 
