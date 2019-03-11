@@ -1,3 +1,4 @@
+@ccp_signup
 Feature: Is the CCP Signup /par/app/rsaquestions/3 page navigation correct?
   Is the correct page returned
 

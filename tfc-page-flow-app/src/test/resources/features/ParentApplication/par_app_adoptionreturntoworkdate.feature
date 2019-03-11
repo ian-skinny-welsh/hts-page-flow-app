@@ -1,3 +1,4 @@
+@parent_application
 Feature: Is the Parent Application /par/app/adoptionreturntoworkdate page navigation correct?
   Is the correct page returned
 

@@ -1,3 +1,4 @@
+@cic_parent_account
 Feature: Is the CIC Parent Account /par/app/childsname page navigation correct?
   Is the correct page returned
 

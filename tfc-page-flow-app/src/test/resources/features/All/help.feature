@@ -1,3 +1,4 @@
+@all
 Feature: Is the All /help page navigation correct?
   Is the correct page returned
 

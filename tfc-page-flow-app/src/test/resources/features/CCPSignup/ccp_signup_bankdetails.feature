@@ -1,3 +1,4 @@
+@ccp_signup
 Feature: Is the CCP Signup /ccp/signup/bankdetails page navigation correct?
   Is the correct page returned
 

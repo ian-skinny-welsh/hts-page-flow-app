@@ -1,3 +1,4 @@
+@parent_account
 Feature: Is the Parent Account /par/acc/payewarningnonworking page navigation correct?
   Is the correct page returned
 

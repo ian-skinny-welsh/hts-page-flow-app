@@ -1,3 +1,4 @@
+@cic_parent_reg
 Feature: Is the CIC Parent Reg /par/app/matchingfailure page navigation correct?
   Is the correct page returned
 

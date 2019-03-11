@@ -1,3 +1,4 @@
+@cic_website
 Feature: Is the CIC Website /ccp/signup/nonukbankdetails page navigation correct?
   Is the correct page returned
 

@@ -1,3 +1,4 @@
+@parent_account
 Feature: Is the Parent Account /par/acc/resetpasswordsuccess page navigation correct?
   Is the correct page returned
 

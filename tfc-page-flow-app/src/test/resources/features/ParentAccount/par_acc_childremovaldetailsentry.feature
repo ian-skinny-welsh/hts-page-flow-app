@@ -1,3 +1,4 @@
+@parent_account
 Feature: Is the Parent Account /par/acc/childremovaldetailsentry page navigation correct?
   Is the correct page returned
 

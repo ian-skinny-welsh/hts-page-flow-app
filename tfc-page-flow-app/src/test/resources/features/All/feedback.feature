@@ -1,3 +1,4 @@
+@all
 Feature: Is the All /feedback page navigation correct?
   Is the correct page returned
 

@@ -1,3 +1,4 @@
+@cic_website
 Feature: Is the CIC Website /ccp/acc/viewacctcic page navigation correct?
   Is the correct page returned
 

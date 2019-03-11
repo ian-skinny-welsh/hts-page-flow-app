@@ -1,3 +1,4 @@
+@cic_website
 Feature: Is the CIC Website /authenticatecode/finish page navigation correct?
   Is the correct page returned
 

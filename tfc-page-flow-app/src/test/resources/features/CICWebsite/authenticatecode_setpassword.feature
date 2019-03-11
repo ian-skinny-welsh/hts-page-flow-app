@@ -1,3 +1,4 @@
+@cic_website
 Feature: Is the CIC Website /authenticatecode/setpassword page navigation correct?
   Is the correct page returned
 

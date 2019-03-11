@@ -1,3 +1,4 @@
+@ccp_account
 Feature: Is the CCP Account /ccp/acc/rsaquestions/5 page navigation correct?
   Is the correct page returned
 

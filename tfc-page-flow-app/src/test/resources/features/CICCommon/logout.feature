@@ -1,3 +1,4 @@
+@cic_common
 Feature: Is the CIC Common /logout page navigation correct?
   Is the correct page returned
 

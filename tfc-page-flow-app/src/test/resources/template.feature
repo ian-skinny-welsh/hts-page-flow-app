@@ -1,3 +1,6 @@
+<#assign util=statics['net.atos.tfc.pageflowtests.Utility']/>
+<#assign var=util.groupByAction(rows)/>
+@${util.tagString(websiteName)}
 Feature: Is the ${websiteName} ${fromUri} page navigation correct?
   Is the correct page returned
 
@@ -17,7 +20,6 @@ Examples:
     | ${row.rule} | ${row.action} | ${row.toWebsite} | ${row.toURI} |
 </#list>
 
-<#assign var=statics['net.atos.tfc.pageflowtests.Utility'].groupByAction(rows)/>
 <#list var as propName, propValue>
     <#if propValue?size != 0>
 Scenario: ${websiteName} page ${fromUri} with action ${propName} rules are ordered correctly

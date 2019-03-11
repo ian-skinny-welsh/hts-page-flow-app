@@ -1,3 +1,4 @@
+@parent_account
 Feature: Is the Parent Account /par/acc/rsaquestions/5 page navigation correct?
   Is the correct page returned
 

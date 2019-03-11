@@ -1,3 +1,4 @@
+@parent_application
 Feature: Is the Parent Application /ccp/signup/rsaquestions/4 page navigation correct?
   Is the correct page returned
 

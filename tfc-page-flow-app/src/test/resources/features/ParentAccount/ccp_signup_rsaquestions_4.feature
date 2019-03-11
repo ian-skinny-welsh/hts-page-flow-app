@@ -1,3 +1,4 @@
+@parent_account
 Feature: Is the Parent Account /ccp/signup/rsaquestions/4 page navigation correct?
   Is the correct page returned
 

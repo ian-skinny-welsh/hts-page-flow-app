@@ -1,3 +1,4 @@
+@ccp_account
 Feature: Is the CCP Account /ccp/acc/updatemaincontactdetails page navigation correct?
   Is the correct page returned
 

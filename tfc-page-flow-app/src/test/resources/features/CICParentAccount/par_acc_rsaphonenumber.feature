@@ -1,3 +1,4 @@
+@cic_parent_account
 Feature: Is the CIC Parent Account /par/acc/rsaphonenumber page navigation correct?
   Is the correct page returned
 

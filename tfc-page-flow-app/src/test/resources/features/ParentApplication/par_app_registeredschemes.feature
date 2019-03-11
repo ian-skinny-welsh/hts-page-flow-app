@@ -1,3 +1,4 @@
+@parent_application
 Feature: Is the Parent Application /par/app/registeredschemes page navigation correct?
   Is the correct page returned
 

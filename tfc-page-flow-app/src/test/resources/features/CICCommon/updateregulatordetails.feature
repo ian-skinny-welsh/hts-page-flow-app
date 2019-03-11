@@ -1,3 +1,4 @@
+@cic_common
 Feature: Is the CIC Common /updateregulatordetails page navigation correct?
   Is the correct page returned
 
