@@ -4,13 +4,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import net.atos.tfc.pageflowtests.GenerateTests;
-import net.atos.tfc.pageflowtests.Row;
-import net.bytebuddy.agent.builder.AgentBuilder;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
