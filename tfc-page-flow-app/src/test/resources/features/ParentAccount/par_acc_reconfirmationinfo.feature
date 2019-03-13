@@ -2,11 +2,9 @@
 Feature: Is the Parent Account /par/acc/reconfirmationinfo page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from Parent Account /par/acc/reconfirmationinfo page is correctly displayed
     Given the user has visited "Parent Account" website
     And the user is on page "/par/acc/reconfirmationinfo"
-
-Scenario Outline: The next page from website Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -21,6 +19,8 @@ Examples:
     |  | NEXT | Parent Account | /par/app/declaration |
 
 Scenario: Parent Account page /par/acc/reconfirmationinfo with action NEXT rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/acc/reconfirmationinfo"
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | ParentHasOutstandingUtr |

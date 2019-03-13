@@ -2,11 +2,9 @@
 Feature: Is the CIC Website /ccp/signup/contactdetails page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from CIC Website /ccp/signup/contactdetails page is correctly displayed
     Given the user has visited "CIC Website" website
     And the user is on page "/ccp/signup/contactdetails"
-
-Scenario Outline: The next page from website CIC Website is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -18,6 +16,8 @@ Examples:
     |  | NEXT | CIC Website | /ccp/signup/validationprogress |
 
 Scenario: CIC Website page /ccp/signup/contactdetails with action NEXT rules are ordered correctly
+    Given the user has visited "CIC Website" website
+    And the user is on page "/ccp/signup/contactdetails"
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | isNinoUTRValid |

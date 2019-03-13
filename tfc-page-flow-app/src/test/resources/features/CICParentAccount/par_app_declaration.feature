@@ -2,11 +2,9 @@
 Feature: Is the CIC Parent Account /par/app/declaration page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from CIC Parent Account /par/app/declaration page is correctly displayed
     Given the user has visited "CIC Parent Account" website
     And the user is on page "/par/app/declaration"
-
-Scenario Outline: The next page from website CIC Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -26,6 +24,8 @@ Examples:
     |  | PARWORK | CIC Parent Account | /par/app/parenttype |
 
 Scenario: CIC Parent Account page /par/app/declaration with action ADDACHILD rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/app/declaration"
     When the user clicks "ADDACHILD"
     Then these rules are executed in order:
         | IfOnHoldApplicationsFound |

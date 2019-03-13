@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.asList;
 import static java.util.Optional.ofNullable;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
@@ -67,30 +68,23 @@ public class Stepdefs extends CucumberRoot
 	@Then("^the user is on \"([^\"]*)\" website$")
 	public void the_user_is_on_website(String toWebsite) throws Exception
 	{
-		List<Row> pageFlow = pageFlows.stream()
+		List<String> pageFlow = pageFlows.stream()
 				.filter(p -> StringUtils.equals(rule, p.getRule()))
+				.map(Row::getToWebsite)
 				.collect(Collectors.toList());
 
-		if(pageFlow.size()>1)
-		{
-			pageFlow.forEach(p->
-			{
-				LOGGER.info("{}",p);
-			});
-		}
-		assertThat(pageFlow, hasSize(1));
-		assertThat(pageFlow.get(0).getToWebsite(), is(toWebsite));
+		assertThat(pageFlow, is(asList(toWebsite)));
 	}
 
 	@Then("^the page \"([^\"]*)\" is displayed$")
 	public void the_page_is_displayed(String nextPageUri) throws Exception
 	{
-		List<Row> pageFlow = pageFlows.stream()
+		List<String> pageFlow = pageFlows.stream()
 				.filter(p -> StringUtils.equals(rule, p.getRule()))
+				.map(Row::getToURI)
 				.collect(Collectors.toList());
 
-		assertThat(pageFlow, hasSize(1));
-		assertThat(pageFlow.get(0).getToURI(), is(nextPageUri));
+		assertThat(pageFlow, is(asList(nextPageUri)));
 	}
 
 	@Then("^these rules are executed in order:")
@@ -100,7 +94,7 @@ public class Stepdefs extends CucumberRoot
 				.sorted(Comparator.comparing(Row::getOptionI))
 				.map(Row::getRule)
 				.collect(Collectors.toList());
-		expectedRules.removeAll(Arrays.asList("",null));
+		expectedRules.removeAll(asList("",null));
 
 		assertThat(expectedRules, is(rules));
 	}

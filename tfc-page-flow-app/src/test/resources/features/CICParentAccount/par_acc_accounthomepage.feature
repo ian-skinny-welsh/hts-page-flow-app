@@ -2,11 +2,9 @@
 Feature: Is the CIC Parent Account /par/acc/accounthomepage page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from CIC Parent Account /par/acc/accounthomepage page is correctly displayed
     Given the user has visited "CIC Parent Account" website
     And the user is on page "/par/acc/accounthomepage"
-
-Scenario Outline: The next page from website CIC Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -42,6 +40,8 @@ Examples:
     |  | YOURDETAIL | CIC Parent Account | /par/acc/mydetails |
 
 Scenario: CIC Parent Account page /par/acc/accounthomepage with action NEWCHLDAPP rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "NEWCHLDAPP"
     Then these rules are executed in order:
         | AdditionalChildBlocked |
@@ -50,18 +50,24 @@ Scenario: CIC Parent Account page /par/acc/accounthomepage with action NEWCHLDAP
         | IfOnHoldApplicationsFound |
 
 Scenario: CIC Parent Account page /par/acc/accounthomepage with action YOURDETAIL rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "YOURDETAIL"
     Then these rules are executed in order:
         | IsSignedInAsRepAndHasNotChangeContactDetailsPermission |
         | IsSignedInAsRepAndHasChangeContactDetailsPermission |
 
 Scenario: CIC Parent Account page /par/acc/accounthomepage with action YOURACC rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "YOURACC"
     Then these rules are executed in order:
         | IsParentAccountFrozen |
         | HasNewlyPayOnlyChildren |
 
 Scenario: CIC Parent Account page /par/acc/accounthomepage with action RECONFIRMA rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "RECONFIRMA"
     Then these rules are executed in order:
         | HasMatchingFailure |

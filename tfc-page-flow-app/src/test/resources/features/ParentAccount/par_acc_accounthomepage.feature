@@ -2,11 +2,9 @@
 Feature: Is the Parent Account /par/acc/accounthomepage page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from Parent Account /par/acc/accounthomepage page is correctly displayed
     Given the user has visited "Parent Account" website
     And the user is on page "/par/acc/accounthomepage"
-
-Scenario Outline: The next page from website Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -40,6 +38,8 @@ Examples:
     |  | YOURDETAIL | Parent Account | /par/acc/mydetails |
 
 Scenario: Parent Account page /par/acc/accounthomepage with action NEWCHLDAPP rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "NEWCHLDAPP"
     Then these rules are executed in order:
         | AdditionalChildBlocked |
@@ -48,18 +48,24 @@ Scenario: Parent Account page /par/acc/accounthomepage with action NEWCHLDAPP ru
         | IfOnHoldApplicationsFound |
 
 Scenario: Parent Account page /par/acc/accounthomepage with action YOURDETAIL rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "YOURDETAIL"
     Then these rules are executed in order:
         | IsSignedInAsRepAndHasNotChangeContactDetailsPermission |
         | IsSignedInAsRepAndHasChangeContactDetailsPermission |
 
 Scenario: Parent Account page /par/acc/accounthomepage with action YOURACC rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "YOURACC"
     Then these rules are executed in order:
         | IsParentAccountFrozen |
         | HasNewlyPayOnlyChildren |
 
 Scenario: Parent Account page /par/acc/accounthomepage with action RECONFIRMA rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/acc/accounthomepage"
     When the user clicks "RECONFIRMA"
     Then these rules are executed in order:
         | HasMatchingFailure |

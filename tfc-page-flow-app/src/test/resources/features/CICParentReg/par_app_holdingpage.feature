@@ -2,11 +2,9 @@
 Feature: Is the CIC Parent Reg /par/app/holdingpage page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from CIC Parent Reg /par/app/holdingpage page is correctly displayed
     Given the user has visited "CIC Parent Reg" website
     And the user is on page "/par/app/holdingpage"
-
-Scenario Outline: The next page from website CIC Parent Reg is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -23,6 +21,8 @@ Examples:
     |  | NEXT | CIC Parent Reg | /par/app/holdingpage |
 
 Scenario: CIC Parent Reg page /par/app/holdingpage with action NEXT rules are ordered correctly
+    Given the user has visited "CIC Parent Reg" website
+    And the user is on page "/par/app/holdingpage"
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | AdultOrChildFailFirstGo |

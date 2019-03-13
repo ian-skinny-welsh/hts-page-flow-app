@@ -2,11 +2,9 @@
 Feature: Is the Parent Account /par/app/adoptionpaypartner page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from Parent Account /par/app/adoptionpaypartner page is correctly displayed
     Given the user has visited "Parent Account" website
     And the user is on page "/par/app/adoptionpaypartner"
-
-Scenario Outline: The next page from website Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -22,6 +20,8 @@ Examples:
     |  | NEXT | Parent Account | /par/app/parentminincome |
 
 Scenario: Parent Account page /par/app/adoptionpaypartner with action NEXT rules are ordered correctly
+    Given the user has visited "Parent Account" website
+    And the user is on page "/par/app/adoptionpaypartner"
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNotAllChildrenSelected |

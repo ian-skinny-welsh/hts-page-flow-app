@@ -2,11 +2,9 @@
 Feature: Is the CIC Parent Account /par/acc/childaccountsummary page navigation correct?
   Is the correct page returned
 
-Background:
+Scenario Outline: The next page from CIC Parent Account /par/acc/childaccountsummary page is correctly displayed
     Given the user has visited "CIC Parent Account" website
     And the user is on page "/par/acc/childaccountsummary"
-
-Scenario Outline: The next page from website CIC Parent Account is correctly displayed
     And the rule "<rule>" succeeds
     When the user clicks "<action>"
     Then the user is on "<to website>" website
@@ -28,22 +26,30 @@ Examples:
     |  | REMOVECCP | CIC Parent Account | /par/acc/removalconfirmation |
 
 Scenario: CIC Parent Account page /par/acc/childaccountsummary with action CHANGECCP rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/childaccountsummary"
     When the user clicks "CHANGECCP"
     Then these rules are executed in order:
         | CCPIsPAYE |
 
 Scenario: CIC Parent Account page /par/acc/childaccountsummary with action ADDCCP rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/childaccountsummary"
     When the user clicks "ADDCCP"
     Then these rules are executed in order:
         | MaxCCPLimitReached |
 
 Scenario: CIC Parent Account page /par/acc/childaccountsummary with action PAYCCP rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/childaccountsummary"
     When the user clicks "PAYCCP"
     Then these rules are executed in order:
         | CCPIsBlockedOrSuspended |
         | CCPIsPAYE |
 
 Scenario: CIC Parent Account page /par/acc/childaccountsummary with action MAKEWITHDR rules are ordered correctly
+    Given the user has visited "CIC Parent Account" website
+    And the user is on page "/par/acc/childaccountsummary"
     When the user clicks "MAKEWITHDR"
     Then these rules are executed in order:
         | ParentHasBankDetails |
