@@ -11,16 +11,13 @@ spring:
   main:
     web-environment: false
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
+    url: jdbc:oracle:thin:@${tfc.db.hostname}:1521:xe
     username: tfcuser
     password: tfcuser_pass$
     driver-class-name: oracle.jdbc.OracleDriver
     jdbc-url: ${spring.datasource.url}
     xa:
       dataSourceClassName: oracle.jdbc.xa.client.OracleXADataSource
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.Oracle10gDialect
-        format_sql: false
-        show_sql: false
+tfc:
+  db:
+    hostname: localhost

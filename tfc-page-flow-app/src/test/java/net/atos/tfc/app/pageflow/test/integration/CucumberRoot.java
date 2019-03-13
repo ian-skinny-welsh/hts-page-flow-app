@@ -5,7 +5,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 
 @SpringBootTest
-//@ActiveProfiles("INTEGRATION_TEST")
 @ContextConfiguration(classes=Config.class)
 public class CucumberRoot
 {

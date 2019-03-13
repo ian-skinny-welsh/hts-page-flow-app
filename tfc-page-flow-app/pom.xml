@@ -8,6 +8,7 @@
         <groupId>net.atos.framework</groupId>
         <artifactId>atos-spring-boot-parent</artifactId>
         <version>2.0.5</version>
+        <relativePath/>
     </parent>
 
     <groupId>net.atos.tfc.app</groupId>

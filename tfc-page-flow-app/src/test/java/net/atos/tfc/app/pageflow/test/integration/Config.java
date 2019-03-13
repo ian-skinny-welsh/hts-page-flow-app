@@ -14,8 +14,12 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan({"net.atos.tfc.app.pageflow.test.generate","net.atos.tfc.app.pageflow.test.integration","net.atos.tfc.app.pageflow.test.util"})
+//@ComponentScan({"net.atos.tfc.app.pageflow.test.generate","net.atos.tfc.app.pageflow.test.integration","net.atos.tfc.app.pageflow.test.util"})
 public class Config
 {
-
+    @Bean
+    public PageFlowDriver pageFlowDriver(DataSource dataSource)
+    {
+        return new PageFlowDriver(dataSource);
+    }
 }

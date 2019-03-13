@@ -11,7 +11,5 @@ logging:
 tfc:
   db:
     hostname: localvm
-    show-sql: false
-    format-sql: false
 
 

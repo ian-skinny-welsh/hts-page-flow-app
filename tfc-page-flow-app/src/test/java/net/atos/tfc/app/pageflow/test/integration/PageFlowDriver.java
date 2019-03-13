@@ -11,14 +11,12 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.util.List;
 
-@Component
 public class PageFlowDriver
 {
     public static final String SQL_WEBSITE_ID = "SELECT website_id FROM CFG_WEBSITE where name = :name";
 
     private NamedParameterJdbcTemplate jdbcTemplate;
 
-    @Autowired
     public PageFlowDriver(DataSource dataSource)
     {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
