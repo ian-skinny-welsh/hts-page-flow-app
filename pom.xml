@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>net.atos.tfc.repository</groupId>
+    <groupId>net.atos.tfc.app</groupId>
     <artifactId>tfc-page-flow-parent</artifactId>
     <version>3.1.3-SNAPSHOT</version>
 
