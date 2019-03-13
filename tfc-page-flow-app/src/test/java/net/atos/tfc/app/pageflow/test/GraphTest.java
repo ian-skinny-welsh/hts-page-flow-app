@@ -15,7 +15,7 @@ import static guru.nidi.graphviz.model.Factory.*;
 
 public class GraphTest
 {
-    @Test
+
     public void testGraphviz() throws IOException
     {
         Graph g = graph("example1").directed()
