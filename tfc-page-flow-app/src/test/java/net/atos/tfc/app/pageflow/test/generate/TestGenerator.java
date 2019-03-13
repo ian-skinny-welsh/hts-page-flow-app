@@ -2,8 +2,15 @@ package net.atos.tfc.app.pageflow.test.generate;
 
 import freemarker.core.ParseException;
 import freemarker.template.*;
+import guru.nidi.graphviz.attribute.*;
+import guru.nidi.graphviz.attribute.GraphAttr.SplineMode;
+import guru.nidi.graphviz.engine.Format;
+import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.MutableGraph;
 import net.atos.tfc.app.pageflow.test.util.PageFlowMapper;
 import net.atos.tfc.app.pageflow.test.util.Sql;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.lang.Nullable;
@@ -21,8 +28,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static guru.nidi.graphviz.model.Factory.*;
+
 public class TestGenerator
 {
+	private static Logger LOGGER = LoggerFactory.getLogger(TestGenerator.class);
+
 	private String baseDirectory;
 
 	private Configuration cfg;
@@ -75,6 +86,49 @@ public class TestGenerator
 				.collect(Collectors.groupingBy(Row::getUri));
 
 		rowsMap.forEach((uri,rows) -> generateFeatues(website, rows, uri));
+
+		MutableGraph g = mutGraph(website.getName()).setDirected(true)
+				.graphAttrs()
+					.add(RankDir.LEFT_TO_RIGHT)
+				.use((gr, ctx) ->
+			rowsMap.forEach((uri,rows)-> generateChart(website, rows, uri)));
+
+		createGraphPng(website, g);
+	}
+
+	private void createGraphPng(Website website, MutableGraph g)
+	{
+		try
+		{
+			Graphviz
+					.fromGraph(g)
+					.render(Format.PNG)
+					.toFile(new File("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/graph/"+website.getName()+".png"));
+
+		}
+		catch (IOException e)
+		{
+			LOGGER.warn("",e);
+		}
+	}
+
+	private void generateChart(Website website, List<Row> rows, String uri)
+	{
+		rows.forEach(r->
+		{
+			if("NEXT".equals(r.getAction()))
+			{
+				linkAttrs().add(Color.BLACK, Label.of(r.getRule()));
+			}
+			else
+			{
+				linkAttrs().add(Color.RED, Label.of(r.getRule()));
+			}
+			graphAttrs().add(SplineMode.SPLINE.name(),true);
+			nodeAttrs().add(Shape.RECTANGLE);
+			mutNode(uri).addLink(mutNode(r.getToURI()));
+		});
+
 	}
 
 	private List<Row> getPageFlows(Long id)
