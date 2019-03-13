@@ -1,3 +1,3 @@
-@Library('groovy-scripts@cucumber_template') _
+@Library('groovy-scripts') _
 
 tfcMavenBuildPipeline()
