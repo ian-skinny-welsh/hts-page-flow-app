@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>net.atos.framework</groupId>
-        <artifactId>atos-spring-boot-parent</artifactId>
+        <artifactId>atos-spring-parent</artifactId>
         <version>2.0.5</version>
         <relativePath/>
     </parent>
