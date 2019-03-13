@@ -17,7 +17,7 @@
 
     <properties>
         <cucumber.version>2.3.1</cucumber.version>
-        <tfc-repository.version>3.1.3-SNAPSHOT</tfc-repository.version>
+        <tfc.repository.version>3.1.2</tfc.repository.version>
     </properties>
 
     <dependencies>
@@ -99,7 +99,7 @@
                         <version>${ojdbc6.version}</version>
                     </dependency>
                     <dependency>
-                        <groupId>net.atos.tfc.batch</groupId>
+                        <groupId>net.atos.tfc.repository</groupId>
                         <artifactId>tfc-repository-setup</artifactId>
                         <version>${tfc.repository.version}</version>
                     </dependency>
