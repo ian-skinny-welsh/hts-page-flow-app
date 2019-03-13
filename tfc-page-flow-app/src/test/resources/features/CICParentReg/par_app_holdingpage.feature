@@ -15,7 +15,6 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | AdultOrChildFailFirstGo | NEXT | CIC Parent Reg | /par/app/matchingfailure |
-    | AdultOrChildFailFirstGo | NEXT | CIC Parent Reg | /par/app/matchingfailure |
     | CICEOIInProgress | NEXT | CIC Parent Reg | /par/app/eoiinprogress |
     | CICEOIFail | NEXT | CIC Parent Reg | /par/app/eoifailure |
     | IfReceivedAPI9Response | NEXT | CIC Parent Reg | /par/app/survey |
@@ -26,7 +25,6 @@ Examples:
 Scenario: CIC Parent Reg page /par/app/holdingpage with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | AdultOrChildFailFirstGo |
         | AdultOrChildFailFirstGo |
         | CICEOIInProgress |
         | CICEOIFail |

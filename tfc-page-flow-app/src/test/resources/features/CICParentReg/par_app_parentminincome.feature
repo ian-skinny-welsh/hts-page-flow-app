@@ -18,7 +18,6 @@ Examples:
     | NavFromParentMinIncomeToPartnerMinIncome | NEXT | CIC Parent Reg | /par/app/partnerminincome |
     | NavFromParentMinIncomeToExit | NEXT | CIC Parent Reg | /par/app/exit |
     | NavFromParentMinIncomeToApprenticeMinPay | NEXT | CIC Parent Reg | /par/app/apprenticeminpay |
-    | NavFromParentMinIncomeToApprenticeMinPay | NEXT | CIC Parent Reg | /par/app/apprenticeminpay |
 
 Scenario: CIC Parent Reg page /par/app/parentminincome with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
@@ -26,6 +25,5 @@ Scenario: CIC Parent Reg page /par/app/parentminincome with action NEXT rules ar
         | NavFromParentMinIncomeToMaxPayThreshold |
         | NavFromParentMinIncomeToPartnerMinIncome |
         | NavFromParentMinIncomeToExit |
-        | NavFromParentMinIncomeToApprenticeMinPay |
         | NavFromParentMinIncomeToApprenticeMinPay |
 

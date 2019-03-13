@@ -16,13 +16,11 @@ Examples:
     | rule | action | to website | to url |
     | IfAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/exit |
     | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/adoptionpaywarningpartner |
-    | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/adoptionpaywarningpartner |
     |  | NEXT | CIC Parent Reg | /par/app/worksummary |
 
 Scenario: CIC Parent Reg page /par/app/adoptionreturntoworkdatepartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfAllChildrenSelectedOver14Days |
-        | IfSomeButNoAllChildrenSelectedOver14Days |
         | IfSomeButNoAllChildrenSelectedOver14Days |
 

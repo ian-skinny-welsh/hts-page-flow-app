@@ -14,10 +14,5 @@ Scenario Outline: The next page from website CCP Account is correctly displayed
 
 Examples:
     | rule | action | to website | to url |
-    |  | NEXT | CCP Account | /par/app/entrypointpost |
     |  | NEXT | CCP Account | /ccp/acc/entrypointpost |
-    |  | NEXT | CCP Account | /par/acc/entrypointpost |
-    |  | NEXT | CCP Account | /ccp/acc/entrypointpost |
-    |  | NEXT | CCP Account | /par/app/entrypointpost |
-    |  | NEXT | CCP Account | /par/acc/entrypointpost |
 

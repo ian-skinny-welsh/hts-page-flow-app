@@ -15,7 +15,6 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | AdultOrChildFailFirstGo | NEXT | Parent Application | /par/app/matchingfailure |
-    | AdultOrChildFailFirstGo | NEXT | Parent Application | /par/app/matchingfailure |
     | AdultOrChildFailSecondGoAndSecurityDone | NEXT | Parent Application | /par/app/survey |
     | AdultOrChildFailSecondGoAndSecurityNotDone | NEXT | Parent Application | /par/app/enterpassword |
     | AllAdultAndChildPassAndSecurityDone | NEXT | Parent Application | /par/app/survey |
@@ -27,7 +26,6 @@ Examples:
 Scenario: Parent Application page /par/app/holdingpage with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | AdultOrChildFailFirstGo |
         | AdultOrChildFailFirstGo |
         | AdultOrChildFailSecondGoAndSecurityDone |
         | AdultOrChildFailSecondGoAndSecurityNotDone |

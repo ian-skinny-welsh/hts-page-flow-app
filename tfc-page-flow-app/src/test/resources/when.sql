@@ -12,13 +12,13 @@ select distinct
 from
 	cfg_page_flow pf
 inner join
-    cfg_website_page wp on pf.FROM_PAGE_ID = wp.page_id
+    cfg_website_page wp on pf.FROM_PAGE_ID = wp.page_id and pf.WEBSITE_ID=wp.WEBSITE_ID
 inner join
-    cfg_website_page wp2 on pf.TO_PAGE_ID = wp2.page_id
+    cfg_website_page wp2 on pf.TO_PAGE_ID = wp2.page_id and pf.WEBSITE_ID=wp2.WEBSITE_ID
 inner join
     cfg_website w on pf.WEBSITE_ID = w.WEBSITE_ID
 where
-    pf.WEBSITE_ID = :website_id
+    pf.WEBSITE_ID = :fromWebsiteID
     and pf.action = :action
-    and wp.URI = :uri
+    and wp.URI = :fromPage
 

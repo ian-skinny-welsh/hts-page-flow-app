@@ -15,41 +15,18 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Account | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Account | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Account | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Account | /par/app/workstartdatepartner |
     | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
     | IfSelectedSelfEmployed | NEXT | CIC Parent Account | /par/app/partnerselfemploy |
     | IfOnlySelectedNotInEmployment | NEXT | CIC Parent Account | /par/app/exit |
-    | IfOnlySelectedNotInEmployment | NEXT | CIC Parent Account | /par/app/exit |
     | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits | NEXT | CIC Parent Account | /par/app/exit |
-    | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits | NEXT | CIC Parent Account | /par/app/exit |
-    |  | NEXT | CIC Parent Account | /par/app/otherleavepaytypepartner |
     |  | NEXT | CIC Parent Account | /par/app/otherleavepaytypepartner |
 
 Scenario: CIC Parent Account page /par/app/partnertype with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
         | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
         | IfSelectedSelfEmployed |
         | IfOnlySelectedNotInEmployment |
-        | IfOnlySelectedNotInEmployment |
-        | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits |
         | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits |
 

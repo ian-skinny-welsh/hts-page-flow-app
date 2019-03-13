@@ -15,19 +15,13 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     |  | ADDCHILD | CIC Parent Reg | /par/app/childsdetails |
-    |  | ADDCHILD | CIC Parent Reg | /par/app/childsdetails |
-    |  | CHANGECHLD | CIC Parent Reg | /par/app/childsdetails |
     |  | CHANGECHLD | CIC Parent Reg | /par/app/childsdetails |
     |  | CONTINUE | CIC Parent Reg | /par/app/benefits |
-    |  | CONTINUE | CIC Parent Reg | /par/app/benefits |
     | IfChildHasOpenAccount | REMOVECHLD | CIC Parent Reg | /par/app/cantremovechild |
-    | IfChildHasOpenAccount | REMOVECHLD | CIC Parent Reg | /par/app/cantremovechild |
-    |  | REMOVECHLD | CIC Parent Reg | /par/app/removechild |
     |  | REMOVECHLD | CIC Parent Reg | /par/app/removechild |
 
 Scenario: CIC Parent Reg page /par/app/childrensummary with action REMOVECHLD rules are ordered correctly
     When the user clicks "REMOVECHLD"
     Then these rules are executed in order:
-        | IfChildHasOpenAccount |
         | IfChildHasOpenAccount |
 

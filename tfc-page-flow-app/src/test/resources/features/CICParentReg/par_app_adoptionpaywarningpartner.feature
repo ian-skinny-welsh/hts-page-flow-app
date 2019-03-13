@@ -15,19 +15,13 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | CIC Parent Reg | /par/app/worksummary |
 
 Scenario: CIC Parent Reg page /par/app/adoptionpaywarningpartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
-        | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfPartnerAndParentHaveSelectedQualifyingBenefits |
         | IfPartnerAndParentHaveSelectedQualifyingBenefits |
 

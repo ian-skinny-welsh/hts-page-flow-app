@@ -15,5 +15,4 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     |  | NEXT | CIC Parent Account | /par/app/parentnationality |
-    |  | NEXT | CIC Parent Account | /par/app/parentnationality |
 

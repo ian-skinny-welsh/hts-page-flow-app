@@ -15,19 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfHasUTRCICPartner | NEXT | CIC Parent Reg | /par/app/partnerselfemployyes |
-    | IfHasUTRCICPartner | NEXT | CIC Parent Reg | /par/app/partnerselfemployyes |
-    | IfHasUTRCICPartner | NEXT | CIC Parent Reg | /par/app/partnerselfemployyes |
-    | IfHasUTRCICPartner | NEXT | CIC Parent Reg | /par/app/partnerselfemployyes |
-    |  | NEXT | CIC Parent Reg | /par/app/partnerselfemployno |
-    |  | NEXT | CIC Parent Reg | /par/app/partnerselfemployno |
-    |  | NEXT | CIC Parent Reg | /par/app/partnerselfemployno |
     |  | NEXT | CIC Parent Reg | /par/app/partnerselfemployno |
 
 Scenario: CIC Parent Reg page /par/app/partnerselfemploy with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfHasUTRCICPartner |
-        | IfHasUTRCICPartner |
-        | IfHasUTRCICPartner |
         | IfHasUTRCICPartner |
 

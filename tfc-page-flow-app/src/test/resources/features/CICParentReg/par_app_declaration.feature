@@ -17,13 +17,10 @@ Examples:
     |  | ADDACHILD | CIC Parent Reg | /par/app/childsdetails |
     |  | BENEFITS | CIC Parent Reg | /par/app/benefits |
     |  | CHILDETAIL | CIC Parent Reg | /par/app/childrensummary |
-    |  | CHILDETAIL | CIC Parent Reg | /par/app/childrensummary |
     |  | CONTINUE | CIC Parent Reg | /par/app/holdingpage |
     |  | INCOME | CIC Parent Reg | /par/app/parentminincome |
     |  | PARDETAIL | CIC Parent Reg | /par/app/country |
     |  | PARTDETAIL | CIC Parent Reg | /par/app/haspartner |
     |  | PARTWORK | CIC Parent Reg | /par/app/partnertype |
-    |  | PARTWORK | CIC Parent Reg | /par/app/partnertype |
-    |  | PARWORK | CIC Parent Reg | /par/app/parenttype |
     |  | PARWORK | CIC Parent Reg | /par/app/parenttype |
 

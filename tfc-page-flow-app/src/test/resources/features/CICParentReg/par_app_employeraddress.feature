@@ -17,7 +17,6 @@ Examples:
     | ContinueAndAddAnotherEmployer | ADDANOTHER | CIC Parent Reg | /par/app/employeraddress |
     | ContinueAndDisplayOtherEmployer | CONTINUE | CIC Parent Reg | /par/app/employeraddress |
     |  | CONTINUE | CIC Parent Reg | /par/app/parenttype |
-    |  | CONTINUE | CIC Parent Reg | /par/app/parenttype |
 
 Scenario: CIC Parent Reg page /par/app/employeraddress with action CONTINUE rules are ordered correctly
     When the user clicks "CONTINUE"

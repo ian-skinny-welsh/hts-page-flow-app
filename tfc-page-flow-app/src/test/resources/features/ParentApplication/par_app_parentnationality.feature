@@ -15,19 +15,10 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | NeitherUKorEU | NEXT | Parent Application | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Application | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Application | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Application | /par/app/parentrecourse |
-    |  | NEXT | Parent Application | /par/app/parentdetails |
-    |  | NEXT | Parent Application | /par/app/parentdetails |
-    |  | NEXT | Parent Application | /par/app/parentdetails |
     |  | NEXT | Parent Application | /par/app/parentdetails |
 
 Scenario: Parent Application page /par/app/parentnationality with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | NeitherUKorEU |
-        | NeitherUKorEU |
-        | NeitherUKorEU |
         | NeitherUKorEU |
 

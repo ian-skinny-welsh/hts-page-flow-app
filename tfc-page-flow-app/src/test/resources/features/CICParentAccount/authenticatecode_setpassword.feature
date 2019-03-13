@@ -15,19 +15,10 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | isRsaAction | NEXT | CIC Parent Account | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Parent Account | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Parent Account | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Parent Account | /authenticatecode/rsacapture |
-    |  | NEXT | CIC Parent Account | /authenticatecode/finish |
-    |  | NEXT | CIC Parent Account | /authenticatecode/finish |
-    |  | NEXT | CIC Parent Account | /authenticatecode/finish |
     |  | NEXT | CIC Parent Account | /authenticatecode/finish |
 
 Scenario: CIC Parent Account page /authenticatecode/setpassword with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isRsaAction |
-        | isRsaAction |
-        | isRsaAction |
         | isRsaAction |
 

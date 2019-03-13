@@ -15,8 +15,5 @@ Scenario Outline: The next page from website CCP Signup is correctly displayed
 Examples:
     | rule | action | to website | to url |
     |  | SIGNINACC | CCP Signup | /ccp/acc/login |
-    |  | SIGNINACC | CCP Signup | /ccp/acc/login |
-    |  | SIGNINACC | CCP Signup | /par/app/login |
-    |  | STARTNOW | CCP Signup | /ccp/signup/signupcode |
     |  | STARTNOW | CCP Signup | /ccp/signup/signupcode |
 

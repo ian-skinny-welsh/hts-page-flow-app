@@ -15,17 +15,12 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdatepartner |
-    | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdatepartner |
     | IfAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdatepartner |
-    | IfAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdatepartner |
-    |  | NEXT | Parent Account | /par/app/parentminincome |
     |  | NEXT | Parent Account | /par/app/parentminincome |
 
 Scenario: Parent Account page /par/app/maternitypaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
-        | IfAllChildrenSelected |
         | IfAllChildrenSelected |
 

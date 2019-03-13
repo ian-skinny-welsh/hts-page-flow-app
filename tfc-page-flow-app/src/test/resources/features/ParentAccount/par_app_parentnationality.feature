@@ -15,19 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | NeitherUKorEU | NEXT | Parent Account | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Account | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Account | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | Parent Account | /par/app/parentrecourse |
-    |  | NEXT | Parent Account | /par/app/parentdetails |
-    |  | NEXT | Parent Account | /par/app/parentdetails |
-    |  | NEXT | Parent Account | /par/app/parentdetails |
     |  | NEXT | Parent Account | /par/app/parentdetails |
 
 Scenario: Parent Account page /par/app/parentnationality with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | NeitherUKorEU |
-        | NeitherUKorEU |
-        | NeitherUKorEU |
         | NeitherUKorEU |
 

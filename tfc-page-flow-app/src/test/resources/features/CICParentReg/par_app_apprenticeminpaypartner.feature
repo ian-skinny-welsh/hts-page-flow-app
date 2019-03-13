@@ -15,15 +15,11 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | NavFromPartnerApprenticeMinPayToExit | NEXT | CIC Parent Reg | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToExit | NEXT | CIC Parent Reg | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | CIC Parent Reg | /par/app/maxpaythreshold |
     | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | CIC Parent Reg | /par/app/maxpaythreshold |
 
 Scenario: CIC Parent Reg page /par/app/apprenticeminpaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
         | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
 

@@ -17,9 +17,7 @@ Examples:
     | missingDetailsParentSection | NEXT | Parent Account | /par/app/country |
     | missingDetailsPartnerSection | NEXT | Parent Account | /par/app/haspartner |
     | missingDetailsChildSection | NEXT | Parent Account | /par/app/childsname |
-    | missingDetailsChildSection | NEXT | Parent Account | /par/app/childsdetails |
     | missingDetailsChildrenSection | NEXT | Parent Account | /par/app/childrensummary |
-    | missingDetailsEmploymentSection | NEXT | Parent Account | /par/app/parenttype |
     | missingDetailsEmploymentSection | NEXT | Parent Account | /par/app/parenttype |
     |  | NEXT | Parent Account | /par/app/declaration |
 
@@ -29,8 +27,6 @@ Scenario: Parent Account page /par/app/missingdetails with action NEXT rules are
         | missingDetailsParentSection |
         | missingDetailsPartnerSection |
         | missingDetailsChildSection |
-        | missingDetailsChildSection |
         | missingDetailsChildrenSection |
-        | missingDetailsEmploymentSection |
         | missingDetailsEmploymentSection |
 

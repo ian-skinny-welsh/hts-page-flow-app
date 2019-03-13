@@ -15,29 +15,16 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpaypartner |
-    | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/parentminincome |
     | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/parentminincome |
     | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/partnerminincome |
-    | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/partnerminincome |
     | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/parentminincome |
-    | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | Parent Account | /par/app/parentminincome |
-    |  | NEXT | Parent Account | /par/app/parentminincome |
     |  | NEXT | Parent Account | /par/app/parentminincome |
 
 Scenario: Parent Account page /par/app/maternitypaywarningpartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfPartnerAndParentHaveSelectedQualifyingBenefits |
         | IfPartnerAndParentHaveSelectedQualifyingBenefits |
 

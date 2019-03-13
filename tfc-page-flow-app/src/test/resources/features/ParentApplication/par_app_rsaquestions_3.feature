@@ -14,6 +14,5 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 
 Examples:
     | rule | action | to website | to url |
-    |  | NEXT | Parent Application | /ccp/signup/rsaphonenumber |
     |  | NEXT | Parent Application | /par/app/rsaphonenumber |
 

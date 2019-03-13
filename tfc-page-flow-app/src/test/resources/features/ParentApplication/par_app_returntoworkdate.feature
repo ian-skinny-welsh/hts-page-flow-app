@@ -15,11 +15,8 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | Parent Application | /par/app/maternitypaywarning |
-    | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | Parent Application | /par/app/maternitypaywarning |
     | IfAllChildrenSelectedOver14Days | NEXT | Parent Application | /par/app/exit |
     | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpay |
-    | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
     | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
     |  | NEXT | Parent Application | /par/app/parentminincome |
 
@@ -27,10 +24,7 @@ Scenario: Parent Application page /par/app/returntoworkdate with action NEXT rul
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelectedOver14Days |
-        | IfSomeButNoAllChildrenSelectedOver14Days |
         | IfAllChildrenSelectedOver14Days |
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfHasPartner |
         | IfHasPartner |
 

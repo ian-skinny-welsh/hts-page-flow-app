@@ -14,7 +14,6 @@ Scenario Outline: The next page from website CCP Account is correctly displayed
 
 Examples:
     | rule | action | to website | to url |
-    | isMaintenanceTimeWeekBefore | NEXT | CCP Account | /par/app/buildplannedoutage |
     | isMaintenanceTimeWeekBefore | NEXT | CCP Account | /ccp/acc/buildplannedoutage |
     | ifPOSTDataOK | NEXT | CCP Account | /ccp/acc/changepasswordsuccess |
     | ifAnyProblemsWithPassword | NEXT | CCP Account | /ccp/acc/changepassword |
@@ -22,7 +21,6 @@ Examples:
 Scenario: CCP Account page /ccp/acc/changetemppassword with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isMaintenanceTimeWeekBefore |
         | isMaintenanceTimeWeekBefore |
         | ifPOSTDataOK |
         | ifAnyProblemsWithPassword |

@@ -15,17 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | EntitledForPublicFounds | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    |  | NEXT | CIC Parent Reg | /par/app/exit |
     |  | NEXT | CIC Parent Reg | /par/app/exit |
 
 Scenario: CIC Parent Reg page /par/app/parentrecourse with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
         | EntitledForPublicFounds |
 

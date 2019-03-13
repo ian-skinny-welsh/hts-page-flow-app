@@ -15,10 +15,7 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedMaternityOrPaternityLeave | NEXT | Parent Account | /par/app/maternitypay |
-    | IfSelectedMaternityOrPaternityLeave | NEXT | Parent Account | /par/app/maternitypay |
     | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
     | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
     | IfOnlySelectedBenefitsAndNoPartner | NEXT | Parent Account | /par/app/exit |
     | IfOnlySelectedNotInEmployment | NEXT | Parent Account | /par/app/exit |
@@ -28,10 +25,7 @@ Scenario: Parent Account page /par/app/otherleavepaytype with action NEXT rules 
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedMaternityOrPaternityLeave |
-        | IfSelectedMaternityOrPaternityLeave |
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfHasPartner |
         | IfHasPartner |
         | IfOnlySelectedBenefitsAndNoPartner |
         | IfOnlySelectedNotInEmployment |

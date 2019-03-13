@@ -15,17 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | EntitledForPublicFounds | NEXT | Parent Account | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Account | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Account | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Account | /par/app/parentdetails |
-    |  | NEXT | Parent Account | /par/app/exit |
     |  | NEXT | Parent Account | /par/app/exit |
 
 Scenario: Parent Account page /par/app/parentrecourse with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
         | EntitledForPublicFounds |
 

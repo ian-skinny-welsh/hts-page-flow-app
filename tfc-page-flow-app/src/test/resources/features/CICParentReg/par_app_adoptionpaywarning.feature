@@ -15,23 +15,13 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
     | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
 
 Scenario: CIC Parent Reg page /par/app/adoptionpaywarning with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfHasPartner |
-        | IfHasPartner |
-        | IfHasPartner |
         | IfHasPartner |
 

@@ -15,19 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | NeitherUKorEU | NEXT | CIC Parent Reg | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | CIC Parent Reg | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | CIC Parent Reg | /par/app/parentrecourse |
-    | NeitherUKorEU | NEXT | CIC Parent Reg | /par/app/parentrecourse |
-    |  | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    |  | NEXT | CIC Parent Reg | /par/app/parentdetails |
-    |  | NEXT | CIC Parent Reg | /par/app/parentdetails |
     |  | NEXT | CIC Parent Reg | /par/app/parentdetails |
 
 Scenario: CIC Parent Reg page /par/app/parentnationality with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | NeitherUKorEU |
-        | NeitherUKorEU |
-        | NeitherUKorEU |
         | NeitherUKorEU |
 

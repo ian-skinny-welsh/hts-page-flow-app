@@ -15,16 +15,10 @@ Scenario Outline: The next page from website CCP Account is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | isCcp | NEXT | CCP Account | /ccp/acc/login |
-    | isCcp | NEXT | CCP Account | /ccp/acc/login |
-    | isCcp | NEXT | CCP Account | /par/app/login |
-    |  | NEXT | CCP Account | /par/app/login |
-    |  | NEXT | CCP Account | /ccp/acc/login |
     |  | NEXT | CCP Account | /ccp/acc/login |
 
 Scenario: CCP Account page /ccp/acc/passwordentryfailure with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isCcp |
-        | isCcp |
         | isCcp |
 

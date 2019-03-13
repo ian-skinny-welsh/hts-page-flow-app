@@ -15,15 +15,11 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | NavFromPartnerApprenticeMinPayToExit | NEXT | Parent Account | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToExit | NEXT | Parent Account | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | Parent Account | /par/app/maxpaythreshold |
     | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | Parent Account | /par/app/maxpaythreshold |
 
 Scenario: Parent Account page /par/app/apprenticeminpaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
         | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
 

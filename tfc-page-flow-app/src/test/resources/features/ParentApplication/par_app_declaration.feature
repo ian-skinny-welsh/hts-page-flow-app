@@ -21,8 +21,6 @@ Examples:
     |  | CHANGEDET | Parent Application | /par/app/changedetails |
     |  | CHILDETAIL | Parent Application | /par/app/childrensummary |
     |  | CHILDETAIL | Parent Application | /par/app/childrensummary |
-    |  | CHILDETAIL | Parent Application | /par/app/childrensummary |
-    |  | CHILDETAIL | Parent Application | /par/app/childrensummary |
     | AdultOrChildFailSecondGoAndSecurityNotDone | CONTINUE | Parent Application | /par/app/enterpassword |
     | AllAdultAndChildPassAndSecurityNotDone | CONTINUE | Parent Application | /par/app/enterpassword |
     |  | CONTINUE | Parent Application | /par/app/holdingpage |
@@ -34,10 +32,6 @@ Examples:
     |  | PARTDETAIL | Parent Application | /par/app/partnername |
     |  | PARTWORK | Parent Application | /par/app/partnertype |
     |  | PARTWORK | Parent Application | /par/app/partnertype |
-    |  | PARTWORK | Parent Application | /par/app/partnertype |
-    |  | PARTWORK | Parent Application | /par/app/partnertype |
-    |  | PARWORK | Parent Application | /par/app/parenttype |
-    |  | PARWORK | Parent Application | /par/app/parenttype |
     |  | PARWORK | Parent Application | /par/app/parenttype |
     |  | PARWORK | Parent Application | /par/app/parenttype |
 

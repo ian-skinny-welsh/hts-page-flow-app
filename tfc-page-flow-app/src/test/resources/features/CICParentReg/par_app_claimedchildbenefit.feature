@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IfHasNotClaimedChildBenefit | NEXT | CIC Parent Reg | /par/app/childbirthcertificate |
     |  | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    |  | NEXT | CIC Parent Reg | /par/app/childrensummary |
 
 Scenario: CIC Parent Reg page /par/app/claimedchildbenefit with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

@@ -15,18 +15,15 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | OnlySelectedNoneOfTheseBenefitsAndOrUnviersalCardCredit | NEXT | Parent Account | /par/app/parenttype |
-    | OnlySelectedNoneOfTheseBenefitsAndOrUnviersalCardCredit | NEXT | Parent Account | /par/app/parenttype |
     | SelectedChildcareBursariesOrGrantsButNotEligibleForDFE | NEXT | Parent Account | /par/app/exit |
     | OnlySelectedTaxCreditsButNotEligibleForDFE | NEXT | Parent Account | /par/app/taxcreditswarning |
     | IfEligibleForDFEAndSelectedTaxCreditsButNotChildcareVouchers | NEXT | Parent Account | /par/app/taxcredits |
     | IfSelectedChildcareVouchers | NEXT | Parent Account | /par/app/registeredschemes |
     |  | NEXT | Parent Account | /par/app/parenttype |
-    |  | NEXT | Parent Account | /par/app/parenttype |
 
 Scenario: Parent Account page /par/app/benefits with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | OnlySelectedNoneOfTheseBenefitsAndOrUnviersalCardCredit |
         | OnlySelectedNoneOfTheseBenefitsAndOrUnviersalCardCredit |
         | SelectedChildcareBursariesOrGrantsButNotEligibleForDFE |
         | OnlySelectedTaxCreditsButNotEligibleForDFE |

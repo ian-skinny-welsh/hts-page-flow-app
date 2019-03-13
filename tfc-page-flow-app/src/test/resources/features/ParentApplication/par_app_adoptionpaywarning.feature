@@ -15,23 +15,13 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Application | /par/app/parentminincome |
-    | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Application | /par/app/parentminincome |
     | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Application | /par/app/parentminincome |
-    | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Application | /par/app/parentminincome |
-    | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
     | IfHasPartner | NEXT | Parent Application | /par/app/partnertype |
 
 Scenario: Parent Application page /par/app/adoptionpaywarning with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfHasPartner |
-        | IfHasPartner |
-        | IfHasPartner |
         | IfHasPartner |
 

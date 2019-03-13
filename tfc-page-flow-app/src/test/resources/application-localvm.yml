@@ -1,0 +1,17 @@
+logging:
+  level:
+    root: INFO
+#    org.hibernate: DEBUG
+#    org.springframework: DEBUG
+#    org.springframework.boot: DEBUG
+#    org.springframework.jdbc: DEBUG
+#    org.springframework.batch: DEBUG
+#    org.springframework.transaction: DEBUG
+
+tfc:
+  db:
+    hostname: localvm
+    show-sql: false
+    format-sql: false
+
+

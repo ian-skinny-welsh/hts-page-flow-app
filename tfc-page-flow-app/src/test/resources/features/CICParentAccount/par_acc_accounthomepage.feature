@@ -22,7 +22,6 @@ Examples:
     | HasMatchingFailure | NEWCHLDAPP | CIC Parent Account | /par/acc/matchingfailure |
     | IsReconfirmationRequired | NEWCHLDAPP | CIC Parent Account | /par/acc/reconfirmationrequired |
     | IfOnHoldApplicationsFound | NEWCHLDAPP | CIC Parent Account | /par/app/childrensummary |
-    | IfOnHoldApplicationsFound | NEWCHLDAPP | CIC Parent Account | /par/app/childrensummary |
     |  | NEWCHLDAPP | CIC Parent Account | /par/acc/newchild |
     | HasMatchingFailure | RECONFIRMA | CIC Parent Account | /par/acc/matchingfailure |
     | IfParentHasReconfirmedAndInReconfirmWindow | RECONFIRMA | CIC Parent Account | /par/acc/alreadyreconfirmed |
@@ -48,7 +47,6 @@ Scenario: CIC Parent Account page /par/acc/accounthomepage with action NEWCHLDAP
         | AdditionalChildBlocked |
         | HasMatchingFailure |
         | IsReconfirmationRequired |
-        | IfOnHoldApplicationsFound |
         | IfOnHoldApplicationsFound |
 
 Scenario: CIC Parent Account page /par/acc/accounthomepage with action YOURDETAIL rules are ordered correctly

@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: INFO
+
+tfc:
+  db:
+    hostname: dev
+    show-sql: false
+    format-sql: false
+
+

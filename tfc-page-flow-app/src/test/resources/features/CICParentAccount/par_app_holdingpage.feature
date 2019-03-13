@@ -15,7 +15,6 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | AdultOrChildFailFirstGo | NEXT | CIC Parent Account | /par/app/matchingfailure |
-    | AdultOrChildFailFirstGo | NEXT | CIC Parent Account | /par/app/matchingfailure |
     | IfReceivedAPI9Response | NEXT | CIC Parent Account | /par/app/survey |
     | IfMaxAttemptsReachedAndSecurityDone | NEXT | CIC Parent Account | /par/app/survey |
     | IfMaxAttemptsReachedAndSecurityNotDone | NEXT | CIC Parent Account | /par/app/survey |
@@ -24,7 +23,6 @@ Examples:
 Scenario: CIC Parent Account page /par/app/holdingpage with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | AdultOrChildFailFirstGo |
         | AdultOrChildFailFirstGo |
         | IfReceivedAPI9Response |
         | IfMaxAttemptsReachedAndSecurityDone |

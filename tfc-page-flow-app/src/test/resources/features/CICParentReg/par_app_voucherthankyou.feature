@@ -15,13 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement | NEXT | CIC Parent Reg | /par/app/parenttype |
-    | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement | NEXT | CIC Parent Reg | /par/app/parenttype |
-    |  | NEXT | CIC Parent Reg | /par/app/parenttype |
     |  | NEXT | CIC Parent Reg | /par/app/parenttype |
 
 Scenario: CIC Parent Reg page /par/app/voucherthankyou with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement |
         | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement |
 

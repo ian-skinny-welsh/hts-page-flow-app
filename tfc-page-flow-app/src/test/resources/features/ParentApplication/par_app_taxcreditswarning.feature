@@ -15,12 +15,10 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | Parent Application | /par/app/parenttype |
-    | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | Parent Application | /par/app/parenttype |
     |  | NEXT | Parent Application | /par/app/registeredschemes |
 
 Scenario: Parent Application page /par/app/taxcreditswarning with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfSelectedTaxCreditsButNotChildcareVouchers |
         | IfSelectedTaxCreditsButNotChildcareVouchers |
 

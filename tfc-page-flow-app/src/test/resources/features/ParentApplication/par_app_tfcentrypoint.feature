@@ -17,12 +17,8 @@ Examples:
     | Api30THValidationFailedNavRule | NEXT | Parent Application | /par/app/matchingfailed3 |
     | Api30PDValidationFailedNavRule | NEXT | Parent Application | /par/app/matchingfailed1 |
     | Api30DDValidationFailedNavRule | NEXT | Parent Application | /par/app/matchingfailed2 |
-    | ParentIdaHasApplicationNavRule | NEXT | Parent Application | /par/acc/entrypointpost |
     | ParentIdaHasApplicationNavRule | NEXT | Parent Application | /par/app/entrypointpost |
-    | ParentIdaHasApplicationNavRule | NEXT | Parent Application | /ccp/acc/entrypointpost |
-    |  | NEXT | Parent Application | /par/acc/entrypointpost |
     |  | NEXT | Parent Application | /par/app/entrypointpost |
-    |  | NEXT | Parent Application | /ccp/acc/entrypointpost |
 
 Scenario: Parent Application page /par/app/tfcentrypoint with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
@@ -30,7 +26,5 @@ Scenario: Parent Application page /par/app/tfcentrypoint with action NEXT rules 
         | Api30THValidationFailedNavRule |
         | Api30PDValidationFailedNavRule |
         | Api30DDValidationFailedNavRule |
-        | ParentIdaHasApplicationNavRule |
-        | ParentIdaHasApplicationNavRule |
         | ParentIdaHasApplicationNavRule |
 

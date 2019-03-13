@@ -15,11 +15,8 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Account | /par/app/maternitypaywarning |
-    | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Account | /par/app/maternitypaywarning |
     | IfAllChildrenSelectedOver14Days | NEXT | CIC Parent Account | /par/app/exit |
     | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpay |
-    | IfHasPartner | NEXT | CIC Parent Account | /par/app/partnertype |
     | IfHasPartner | NEXT | CIC Parent Account | /par/app/partnertype |
     |  | NEXT | CIC Parent Account | /par/app/worksummary |
 
@@ -27,10 +24,7 @@ Scenario: CIC Parent Account page /par/app/returntoworkdate with action NEXT rul
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelectedOver14Days |
-        | IfSomeButNoAllChildrenSelectedOver14Days |
         | IfAllChildrenSelectedOver14Days |
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfHasPartner |
         | IfHasPartner |
 

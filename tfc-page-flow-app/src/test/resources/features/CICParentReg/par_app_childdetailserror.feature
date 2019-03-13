@@ -15,12 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | IfHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
     |  | NEXT | CIC Parent Reg | /par/app/childsdetails |
 
 Scenario: CIC Parent Reg page /par/app/childdetailserror with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfHasChildrenInSystem |
         | IfHasChildrenInSystem |
 

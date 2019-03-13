@@ -15,8 +15,5 @@ Scenario Outline: The next page from website CIC Common is correctly displayed
 Examples:
     | rule | action | to website | to url |
     |  | AUTHCODE | CIC Common | /authenticatecode |
-    |  | AUTHCODE | CIC Common | /authenticatecode |
-    |  | CCP | CIC Common | /ccp/acc/assistccp |
-    |  | PARENT | CIC Common | /par/acc/assistparent |
     |  | UPDATEREG | CIC Common | /updateregulatordetails |
 

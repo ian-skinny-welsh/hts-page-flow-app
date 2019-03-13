@@ -15,14 +15,12 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IsTrialFilterOff | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
-    | IsTrialFilterOff | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
     | IsRollOutFiltersOff | NEXT | CIC Parent Reg | /par/app/trialdetailsentry |
     |  | NEXT | CIC Parent Reg | /par/app/invitedtotrial |
 
 Scenario: CIC Parent Reg page /par/app/checklist with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IsTrialFilterOff |
         | IsTrialFilterOff |
         | IsRollOutFiltersOff |
 

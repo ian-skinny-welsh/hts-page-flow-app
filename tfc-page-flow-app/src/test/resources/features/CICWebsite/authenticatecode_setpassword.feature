@@ -15,19 +15,10 @@ Scenario Outline: The next page from website CIC Website is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | isRsaAction | NEXT | CIC Website | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Website | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Website | /authenticatecode/rsacapture |
-    | isRsaAction | NEXT | CIC Website | /authenticatecode/rsacapture |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
     |  | NEXT | CIC Website | /authenticatecode/finish |
 
 Scenario: CIC Website page /authenticatecode/setpassword with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isRsaAction |
-        | isRsaAction |
-        | isRsaAction |
         | isRsaAction |
 

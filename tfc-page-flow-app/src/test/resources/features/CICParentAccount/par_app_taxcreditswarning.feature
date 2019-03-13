@@ -15,12 +15,10 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | CIC Parent Account | /par/app/parenttype |
-    | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | CIC Parent Account | /par/app/parenttype |
     |  | NEXT | CIC Parent Account | /par/app/registeredschemes |
 
 Scenario: CIC Parent Account page /par/app/taxcreditswarning with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfSelectedTaxCreditsButNotChildcareVouchers |
         | IfSelectedTaxCreditsButNotChildcareVouchers |
 

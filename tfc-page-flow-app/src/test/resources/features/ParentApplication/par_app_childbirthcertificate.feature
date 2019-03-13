@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IfYes | NEXT | Parent Application | /par/app/childbirthcertificatecountry |
     |  | NEXT | Parent Application | /par/app/childrensummary |
-    |  | NEXT | Parent Application | /par/app/childrensummary |
 
 Scenario: Parent Application page /par/app/childbirthcertificate with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

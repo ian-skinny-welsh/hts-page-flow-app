@@ -15,14 +15,12 @@ Scenario Outline: The next page from website CCP Signup is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | validUtrAndRsaHasBeenDone | NEXT | CCP Signup | /ccp/signup/thankyoufeedback |
-    | validUtrAndRsaHasBeenDone | NEXT | CCP Signup | /ccp/signup/thankyoufeedback |
     | invalidUTR | NEXT | CCP Signup | /ccp/signup/uniquetaxreference |
     |  | NEXT | CCP Signup | /ccp/signup/bankdetails |
 
 Scenario: CCP Signup page /ccp/signup/uniquetaxreference with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | validUtrAndRsaHasBeenDone |
         | validUtrAndRsaHasBeenDone |
         | invalidUTR |
 

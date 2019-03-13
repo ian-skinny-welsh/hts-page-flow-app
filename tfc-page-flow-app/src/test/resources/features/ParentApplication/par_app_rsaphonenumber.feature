@@ -15,12 +15,10 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | AdultOrChildFailFirstGo | NEXT | Parent Application | /par/app/matchingfailure |
-    | AdultOrChildFailFirstGo | NEXT | Parent Application | /par/app/matchingfailure |
     |  | NEXT | Parent Application | /par/app/survey |
 
 Scenario: Parent Application page /par/app/rsaphonenumber with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | AdultOrChildFailFirstGo |
         | AdultOrChildFailFirstGo |
 

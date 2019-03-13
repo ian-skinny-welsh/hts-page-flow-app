@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IfNoChildrenOnSummary | NEXT | CIC Parent Account | /par/acc/accounthomepage |
     |  | NEXT | CIC Parent Account | /par/app/childrensummary |
-    |  | NEXT | CIC Parent Account | /par/app/childrensummary |
 
 Scenario: CIC Parent Account page /par/app/childremoved with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

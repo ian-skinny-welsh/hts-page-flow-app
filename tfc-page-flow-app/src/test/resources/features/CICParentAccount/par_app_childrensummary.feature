@@ -14,24 +14,14 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 
 Examples:
     | rule | action | to website | to url |
-    |  | ADDCHILD | CIC Parent Account | /par/app/childsname |
-    |  | ADDCHILD | CIC Parent Account | /par/app/childsdetails |
-    |  | ADDCHILD | CIC Parent Account | /par/app/childsname |
     |  | ADDCHILD | CIC Parent Account | /par/app/childsdetails |
     |  | CHANGECHLD | CIC Parent Account | /par/app/childsdetails |
-    |  | CHANGECHLD | CIC Parent Account | /par/app/childsname |
-    |  | CHANGECHLD | CIC Parent Account | /par/app/childsname |
-    |  | CHANGECHLD | CIC Parent Account | /par/app/childsdetails |
-    |  | CONTINUE | CIC Parent Account | /par/app/benefits |
     |  | CONTINUE | CIC Parent Account | /par/app/benefits |
     | IfChildHasOpenAccount | REMOVECHLD | CIC Parent Account | /par/app/cantremovechild |
-    | IfChildHasOpenAccount | REMOVECHLD | CIC Parent Account | /par/app/cantremovechild |
-    |  | REMOVECHLD | CIC Parent Account | /par/app/removechild |
     |  | REMOVECHLD | CIC Parent Account | /par/app/removechild |
 
 Scenario: CIC Parent Account page /par/app/childrensummary with action REMOVECHLD rules are ordered correctly
     When the user clicks "REMOVECHLD"
     Then these rules are executed in order:
-        | IfChildHasOpenAccount |
         | IfChildHasOpenAccount |
 

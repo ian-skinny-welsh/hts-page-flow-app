@@ -15,13 +15,10 @@ Scenario Outline: The next page from website CIC Website is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | isBankDetailsPersisted | NEXT | CIC Website | /ccp/signup/contactdetails |
-    | isBankDetailsPersisted | NEXT | CIC Website | /ccp/signup/contactdetails |
-    |  | NEXT | CIC Website | /ccp/signup/contactdetails |
     |  | NEXT | CIC Website | /ccp/signup/contactdetails |
 
 Scenario: CIC Website page /ccp/signup/bankdetails with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isBankDetailsPersisted |
         | isBankDetailsPersisted |
 

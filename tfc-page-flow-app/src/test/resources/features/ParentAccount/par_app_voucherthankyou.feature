@@ -15,13 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement | NEXT | Parent Account | /par/app/parenttype |
-    | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement | NEXT | Parent Account | /par/app/parenttype |
-    |  | NEXT | Parent Account | /par/app/parenttype |
     |  | NEXT | Parent Account | /par/app/parenttype |
 
 Scenario: Parent Account page /par/app/voucherthankyou with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement |
         | LeaveQualifiesForDFEAndApplyForTFCAnd15HoursFreeEntitlement |
 

@@ -15,7 +15,6 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfHasChildrenInSystem | NEXT | Parent Account | /par/app/childrensummary |
-    |  | NEXT | Parent Account | /par/app/childsdetails |
     |  | NEXT | Parent Account | /par/app/childsname |
 
 Scenario: Parent Account page /par/app/childdetailserror with action NEXT rules are ordered correctly

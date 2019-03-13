@@ -16,8 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IfAllChildrenSelectedIneligible | NEXT | CIC Parent Account | /par/app/exit |
     | IfSomeButNoAllChildrenSelectedIneligible | NEXT | CIC Parent Account | /par/app/maternitypaywarningpartner |
-    | IfSomeButNoAllChildrenSelectedIneligible | NEXT | CIC Parent Account | /par/app/maternitypaywarningpartner |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpaypartner |
     | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpaypartner |
     |  | NEXT | CIC Parent Account | /par/app/worksummary |
 
@@ -26,7 +24,5 @@ Scenario: CIC Parent Account page /par/app/returntoworkdatepartner with action N
     Then these rules are executed in order:
         | IfAllChildrenSelectedIneligible |
         | IfSomeButNoAllChildrenSelectedIneligible |
-        | IfSomeButNoAllChildrenSelectedIneligible |
-        | IfSelectedAdoptionPay |
         | IfSelectedAdoptionPay |
 

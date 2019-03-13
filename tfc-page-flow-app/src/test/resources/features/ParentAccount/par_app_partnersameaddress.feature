@@ -15,9 +15,7 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | Parent Account | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | Parent Account | /par/app/childsdetails |
     | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | Parent Account | /par/app/childsname |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | Parent Account | /par/app/partneraddress |
     | IfPartnerDoesNotLiveAtSameAddress | NEXT | Parent Account | /par/app/partneraddress |
 
 Scenario: Parent Account page /par/app/partnersameaddress with action NEXT rules are ordered correctly
@@ -25,7 +23,5 @@ Scenario: Parent Account page /par/app/partnersameaddress with action NEXT rules
     Then these rules are executed in order:
         | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
         | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerDoesNotLiveAtSameAddress |
         | IfPartnerDoesNotLiveAtSameAddress |
 

@@ -15,21 +15,12 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfStartDateIsMoreThan14DaysInFuture | NEXT | Parent Application | /par/app/exit |
-    | IfStartDateIsMoreThan14DaysInFuture | NEXT | Parent Application | /par/app/exit |
     | IfSelectedSelfEmployed | NEXT | Parent Application | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | Parent Application | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | Parent Application | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | Parent Application | /par/app/partnerselfemploy |
-    |  | NEXT | Parent Application | /par/app/otherleavepaytypepartner |
     |  | NEXT | Parent Application | /par/app/otherleavepaytypepartner |
 
 Scenario: Parent Application page /par/app/workstartdatepartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfStartDateIsMoreThan14DaysInFuture |
-        | IfStartDateIsMoreThan14DaysInFuture |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
         | IfSelectedSelfEmployed |
 

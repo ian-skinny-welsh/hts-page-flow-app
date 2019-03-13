@@ -1,0 +1,26 @@
+logging:
+  level:
+    root: INFO
+#    com.zaxxer.hikari: DEBUG
+#    net.atos.framework.cache.logging: DEBUG
+#    org.springframework: DEBUG
+#    org.springframework.boot: DEBUG
+#    org.springframework.transaction: DEBUG
+
+spring:
+  main:
+    web-environment: false
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: tfcuser
+    password: tfcuser_pass$
+    driver-class-name: oracle.jdbc.OracleDriver
+    jdbc-url: ${spring.datasource.url}
+    xa:
+      dataSourceClassName: oracle.jdbc.xa.client.OracleXADataSource
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        format_sql: false
+        show_sql: false

@@ -15,12 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | Parent Account | /par/app/parenttype |
-    | IfSelectedTaxCreditsButNotChildcareVouchers | NEXT | Parent Account | /par/app/parenttype |
     |  | NEXT | Parent Account | /par/app/registeredschemes |
 
 Scenario: Parent Account page /par/app/taxcreditswarning with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfSelectedTaxCreditsButNotChildcareVouchers |
         | IfSelectedTaxCreditsButNotChildcareVouchers |
 

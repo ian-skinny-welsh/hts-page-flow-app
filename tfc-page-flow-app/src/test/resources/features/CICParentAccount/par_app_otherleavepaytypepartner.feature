@@ -15,8 +15,6 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedMaternityOrPaternityLeave | NEXT | CIC Parent Account | /par/app/maternitypaypartner |
-    | IfSelectedMaternityOrPaternityLeave | NEXT | CIC Parent Account | /par/app/maternitypaypartner |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpaypartner |
     | IfSelectedAdoptionPay | NEXT | CIC Parent Account | /par/app/adoptionpaypartner |
     | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits | NEXT | CIC Parent Account | /par/app/exit |
     | IfOnlySelectedNotInEmployment | NEXT | CIC Parent Account | /par/app/exit |
@@ -26,8 +24,6 @@ Scenario: CIC Parent Account page /par/app/otherleavepaytypepartner with action 
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedMaternityOrPaternityLeave |
-        | IfSelectedMaternityOrPaternityLeave |
-        | IfSelectedAdoptionPay |
         | IfSelectedAdoptionPay |
         | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits |
         | IfOnlySelectedNotInEmployment |

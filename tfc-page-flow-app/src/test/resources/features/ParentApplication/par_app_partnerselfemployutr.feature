@@ -15,13 +15,10 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfHasUTR | NEXT | Parent Application | /par/app/partnerselfemployyes |
-    | IfHasUTR | NEXT | Parent Application | /par/app/partnerselfemployyes |
-    |  | NEXT | Parent Application | /par/app/partnerselfemployno |
     |  | NEXT | Parent Application | /par/app/partnerselfemployno |
 
 Scenario: Parent Application page /par/app/partnerselfemployutr with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfHasUTR |
         | IfHasUTR |
 

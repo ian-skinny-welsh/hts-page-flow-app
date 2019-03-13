@@ -15,17 +15,13 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | Parent Application | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | Parent Application | /par/app/childrensummary |
     | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | Parent Application | /par/app/childsname |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | Parent Application | /par/app/partneraddress |
     | IfPartnerDoesNotLiveAtSameAddress | NEXT | Parent Application | /par/app/partneraddress |
 
 Scenario: Parent Application page /par/app/partnersameaddress with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
         | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerDoesNotLiveAtSameAddress |
         | IfPartnerDoesNotLiveAtSameAddress |
 

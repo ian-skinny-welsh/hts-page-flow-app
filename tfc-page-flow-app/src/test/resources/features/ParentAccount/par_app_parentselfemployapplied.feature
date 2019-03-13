@@ -15,13 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfAppliedMoreThan6WeeksAgo | NEXT | Parent Account | /par/app/exit |
-    | IfAppliedMoreThan6WeeksAgo | NEXT | Parent Account | /par/app/exit |
-    |  | NEXT | Parent Account | /par/app/otherleavepaytype |
     |  | NEXT | Parent Account | /par/app/otherleavepaytype |
 
 Scenario: Parent Account page /par/app/parentselfemployapplied with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfAppliedMoreThan6WeeksAgo |
         | IfAppliedMoreThan6WeeksAgo |
 

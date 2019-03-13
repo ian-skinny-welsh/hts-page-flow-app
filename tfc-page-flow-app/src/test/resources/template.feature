@@ -1,4 +1,4 @@
-<#assign util=statics['net.atos.tfc.pageflowtests.Utility']/>
+<#assign util=statics['net.atos.tfc.app.pageflow.test.util.Utility']/>
 <#assign var=util.groupByAction(rows)/>
 @${util.tagString(websiteName)}
 Feature: Is the ${websiteName} ${fromUri} page navigation correct?

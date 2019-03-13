@@ -15,13 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | HasExistingApplication | NEXT | CIC Parent Reg | /par/app/hasactiveapplication |
-    | HasExistingApplication | NEXT | CIC Parent Reg | /par/app/hasactiveapplication |
-    |  | NEXT | CIC Parent Reg | /par/app/country |
     |  | NEXT | CIC Parent Reg | /par/app/country |
 
 Scenario: CIC Parent Reg page /par/app/parentdetailsentry with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | HasExistingApplication |
         | HasExistingApplication |
 

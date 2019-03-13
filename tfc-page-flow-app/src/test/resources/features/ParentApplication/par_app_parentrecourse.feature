@@ -15,17 +15,10 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | EntitledForPublicFounds | NEXT | Parent Application | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Application | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Application | /par/app/parentdetails |
-    | EntitledForPublicFounds | NEXT | Parent Application | /par/app/parentdetails |
-    |  | NEXT | Parent Application | /par/app/exit |
     |  | NEXT | Parent Application | /par/app/exit |
 
 Scenario: Parent Application page /par/app/parentrecourse with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
-        | EntitledForPublicFounds |
         | EntitledForPublicFounds |
 

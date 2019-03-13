@@ -15,7 +15,4 @@ Scenario Outline: The next page from website CIC Website is correctly displayed
 Examples:
     | rule | action | to website | to url |
     |  | NEXT | CIC Website | /authenticatecode/finish |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
-    |  | NEXT | CIC Website | /authenticatecode/finish |
 

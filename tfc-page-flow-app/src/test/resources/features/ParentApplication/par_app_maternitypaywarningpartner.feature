@@ -15,29 +15,16 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/parentminincome |
     | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/parentminincome |
     | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/partnerminincome |
-    | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/partnerminincome |
     | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/parentminincome |
-    | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | Parent Application | /par/app/parentminincome |
-    |  | NEXT | Parent Application | /par/app/parentminincome |
     |  | NEXT | Parent Application | /par/app/parentminincome |
 
 Scenario: Parent Application page /par/app/maternitypaywarningpartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfPartnerAndParentHaveSelectedQualifyingBenefits |
         | IfPartnerAndParentHaveSelectedQualifyingBenefits |
 

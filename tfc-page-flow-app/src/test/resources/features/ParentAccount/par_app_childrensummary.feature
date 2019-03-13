@@ -15,9 +15,7 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     |  | ADDCHILD | Parent Account | /par/app/childsname |
-    |  | ADDCHILD | Parent Account | /par/app/childsdetails |
     |  | CHANGECHLD | Parent Account | /par/app/childsname |
-    |  | CHANGECHLD | Parent Account | /par/app/childsdetails |
     |  | CONTINUE | Parent Account | /par/app/benefits |
     | IfChildHasOpenAccount | REMOVECHLD | Parent Account | /par/app/cantremovechild |
     |  | REMOVECHLD | Parent Account | /par/app/removechild |

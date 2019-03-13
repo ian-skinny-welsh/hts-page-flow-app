@@ -15,13 +15,11 @@ Scenario Outline: The next page from website CIC Website is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | isUTRNinoValNotFailed | NEXT | CIC Website | /ccp/signup/thankyoufeedback |
-    | isUTRNinoValNotFailed | NEXT | CIC Website | /ccp/signup/thankyoufeedback |
     | isUTRNinoValFailed | NEXT | CIC Website | /ccp/signup/ninoutr |
 
 Scenario: CIC Website page /ccp/signup/validationprogress with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | isUTRNinoValNotFailed |
         | isUTRNinoValNotFailed |
         | isUTRNinoValFailed |
 

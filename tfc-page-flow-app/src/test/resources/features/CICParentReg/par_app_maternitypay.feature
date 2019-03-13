@@ -15,41 +15,20 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelected | NEXT | CIC Parent Reg | /par/app/returntoworkdate |
-    | IfSomeButNoAllChildrenSelected | NEXT | CIC Parent Reg | /par/app/returntoworkdate |
-    | IfAllChildrenSelected | NEXT | CIC Parent Reg | /par/app/returntoworkdate |
     | IfAllChildrenSelected | NEXT | CIC Parent Reg | /par/app/returntoworkdate |
     | IfSelectedAdoptionPay | NEXT | CIC Parent Reg | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Reg | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Reg | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | CIC Parent Reg | /par/app/adoptionpay |
-    | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
-    | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | CIC Parent Reg | /par/app/worksummary |
     | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
-    |  | NEXT | CIC Parent Reg | /par/app/worksummary |
     |  | NEXT | CIC Parent Reg | /par/app/worksummary |
 
 Scenario: CIC Parent Reg page /par/app/maternitypay with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
-        | IfAllChildrenSelected |
         | IfAllChildrenSelected |
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfHasPartner |
-        | IfHasPartner |
-        | IfHasPartner |
         | IfHasPartner |
 

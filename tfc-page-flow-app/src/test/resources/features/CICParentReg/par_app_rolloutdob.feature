@@ -15,14 +15,12 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IsRolloutAvailableForGivenAge | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
-    | IsRolloutAvailableForGivenAge | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
     | IsRolloutAvailableForDisabledChildren | NEXT | CIC Parent Reg | /par/app/rolloutdisability |
     |  | NEXT | CIC Parent Reg | /par/app/rolloutmessage |
 
 Scenario: CIC Parent Reg page /par/app/rolloutdob with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IsRolloutAvailableForGivenAge |
         | IsRolloutAvailableForGivenAge |
         | IsRolloutAvailableForDisabledChildren |
 

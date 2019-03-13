@@ -15,15 +15,10 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfHasChildrenInSystem | NEXT | Parent Account | /par/app/childrensummary |
-    | IfHasChildrenInSystem | NEXT | Parent Account | /par/app/childrensummary |
-    |  | NEXT | Parent Account | /par/app/childsdetails |
-    |  | NEXT | Parent Account | /par/app/childsdetails |
-    |  | NEXT | Parent Account | /par/app/childsname |
     |  | NEXT | Parent Account | /par/app/childsname |
 
 Scenario: Parent Account page /par/app/partneraddress with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfHasChildrenInSystem |
         | IfHasChildrenInSystem |
 

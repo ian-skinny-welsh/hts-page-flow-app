@@ -15,7 +15,6 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfOnHoldApplicationsFound | ADDACHILD | Parent Account | /par/app/childrensummary |
-    |  | ADDACHILD | Parent Account | /par/app/childsdetails |
     |  | ADDACHILD | Parent Account | /par/app/childsname |
     |  | BENEFITS | Parent Account | /par/app/benefits |
     |  | CHANGEDET | Parent Account | /par/app/changedetails |
@@ -25,8 +24,6 @@ Examples:
     |  | PARDETAIL | Parent Account | /par/app/country |
     |  | PARTDETAIL | Parent Account | /par/app/haspartner |
     |  | PARTWORK | Parent Account | /par/app/partnertype |
-    |  | PARTWORK | Parent Account | /par/app/partnertype |
-    |  | PARWORK | Parent Account | /par/app/parenttype |
     |  | PARWORK | Parent Account | /par/app/parenttype |
 
 Scenario: Parent Account page /par/app/declaration with action ADDACHILD rules are ordered correctly

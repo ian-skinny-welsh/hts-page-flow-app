@@ -15,15 +15,11 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | NavFromPartnerApprenticeMinPayToExit | NEXT | Parent Application | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToExit | NEXT | Parent Application | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | Parent Application | /par/app/maxpaythreshold |
     | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | Parent Application | /par/app/maxpaythreshold |
 
 Scenario: Parent Application page /par/app/apprenticeminpaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
         | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
 

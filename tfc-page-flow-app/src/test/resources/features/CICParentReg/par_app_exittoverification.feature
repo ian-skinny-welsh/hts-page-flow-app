@@ -15,5 +15,4 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     |  | NEXT | CIC Parent Reg | /par/app/placeholderverification |
-    |  | NEXT | CIC Parent Reg | /par/app/placeholderverification |
 

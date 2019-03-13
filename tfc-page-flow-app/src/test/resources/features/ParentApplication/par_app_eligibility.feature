@@ -15,9 +15,7 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IsMaintenanceTime | NEXT | Parent Application | /par/app/maintenanceon |
-    | IsMaintenanceTimeWeekBefore | NEXT | Parent Application | /ccp/acc/buildplannedoutage |
     | IsMaintenanceTimeWeekBefore | NEXT | Parent Application | /par/app/buildplannedoutage |
-    | NotVerified | NEXT | Parent Application | /par/app/parentdetailsentry |
     | NotVerified | NEXT | Parent Application | /par/app/parentdetailsentry |
     |  | NEXT | Parent Application | /par/app/existingparentdetails |
 
@@ -26,7 +24,5 @@ Scenario: Parent Application page /par/app/eligibility with action NEXT rules ar
     Then these rules are executed in order:
         | IsMaintenanceTime |
         | IsMaintenanceTimeWeekBefore |
-        | IsMaintenanceTimeWeekBefore |
-        | NotVerified |
         | NotVerified |
 

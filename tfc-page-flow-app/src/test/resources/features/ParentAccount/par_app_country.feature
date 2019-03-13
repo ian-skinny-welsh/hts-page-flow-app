@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IsEnglandSelected | NEXT | Parent Account | /par/app/jointapplication |
     |  | NEXT | Parent Account | /par/app/parentnationality |
-    |  | NEXT | Parent Account | /par/app/parentnationality |
 
 Scenario: Parent Account page /par/app/country with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

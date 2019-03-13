@@ -14,6 +14,5 @@ Scenario Outline: The next page from website CCP Signup is correctly displayed
 
 Examples:
     | rule | action | to website | to url |
-    |  | NEXT | CCP Signup | /par/app/rsaquestions/3 |
     |  | NEXT | CCP Signup | /ccp/signup/rsaquestions/3 |
 

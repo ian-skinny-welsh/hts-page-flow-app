@@ -15,21 +15,12 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfStartDateIsMoreThan14DaysInFuture | NEXT | CIC Parent Reg | /par/app/exit |
-    | IfStartDateIsMoreThan14DaysInFuture | NEXT | CIC Parent Reg | /par/app/exit |
     | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/parentselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/parentselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/parentselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/parentselfemploy |
-    |  | NEXT | CIC Parent Reg | /par/app/otherleavepaytype |
     |  | NEXT | CIC Parent Reg | /par/app/otherleavepaytype |
 
 Scenario: CIC Parent Reg page /par/app/workstartdate with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfStartDateIsMoreThan14DaysInFuture |
-        | IfStartDateIsMoreThan14DaysInFuture |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
         | IfSelectedSelfEmployed |
 

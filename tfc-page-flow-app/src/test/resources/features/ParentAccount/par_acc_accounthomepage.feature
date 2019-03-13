@@ -21,7 +21,6 @@ Examples:
     | HasMatchingFailure | NEWCHLDAPP | Parent Account | /par/acc/matchingfailure |
     | IsReconfirmationRequired | NEWCHLDAPP | Parent Account | /par/acc/reconfirmationrequired |
     | IfOnHoldApplicationsFound | NEWCHLDAPP | Parent Account | /par/app/childrensummary |
-    |  | NEWCHLDAPP | Parent Account | /par/app/childsdetails |
     |  | NEWCHLDAPP | Parent Account | /par/app/childsname |
     | HasMatchingFailure | RECONFIRMA | Parent Account | /par/acc/matchingfailure |
     | IfParentHasReconfirmedAndInReconfirmWindow | RECONFIRMA | Parent Account | /par/acc/alreadyreconfirmed |

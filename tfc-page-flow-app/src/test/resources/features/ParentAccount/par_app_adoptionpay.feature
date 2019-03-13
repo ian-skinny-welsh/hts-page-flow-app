@@ -15,33 +15,18 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfAllChildrenSelected | NEXT | Parent Account | /par/app/adoptionreturntoworkdate |
-    | IfAllChildrenSelected | NEXT | Parent Account | /par/app/adoptionreturntoworkdate |
-    | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/adoptionreturntoworkdate |
     | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/adoptionreturntoworkdate |
     | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
-    | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
-    | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
     | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
     | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    |  | NEXT | Parent Account | /par/app/parentminincome |
     |  | NEXT | Parent Account | /par/app/parentminincome |
 
 Scenario: Parent Account page /par/app/adoptionpay with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfAllChildrenSelected |
-        | IfAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
         | IfSomeButNoAllChildrenSelected |
         | IfSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfHasPartner |
-        | IfHasPartner |
-        | IfHasPartner |
         | IfHasPartner |
 

@@ -15,27 +15,13 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childrensummary |
     | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childsdetails |
-    | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Reg | /par/app/childsdetails |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Reg | /par/app/partneraddress |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Reg | /par/app/partneraddress |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Reg | /par/app/partneraddress |
     | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Reg | /par/app/partneraddress |
 
 Scenario: CIC Parent Reg page /par/app/partnerdetails with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
         | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerDoesNotLiveAtSameAddress |
-        | IfPartnerDoesNotLiveAtSameAddress |
-        | IfPartnerDoesNotLiveAtSameAddress |
         | IfPartnerDoesNotLiveAtSameAddress |
 

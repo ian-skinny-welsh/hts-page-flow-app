@@ -15,9 +15,7 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/adoptionpaywarning |
-    | IfSomeButNoAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/adoptionpaywarning |
     | IfAllChildrenSelectedOver14Days | NEXT | CIC Parent Reg | /par/app/exit |
-    | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
     | IfHasPartner | NEXT | CIC Parent Reg | /par/app/partnertype |
     |  | NEXT | CIC Parent Reg | /par/app/worksummary |
 
@@ -25,8 +23,6 @@ Scenario: CIC Parent Reg page /par/app/adoptionreturntoworkdate with action NEXT
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelectedOver14Days |
-        | IfSomeButNoAllChildrenSelectedOver14Days |
         | IfAllChildrenSelectedOver14Days |
-        | IfHasPartner |
         | IfHasPartner |
 

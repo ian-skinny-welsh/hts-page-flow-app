@@ -14,18 +14,6 @@ Scenario Outline: The next page from website Parent Account is correctly display
 
 Examples:
     | rule | action | to website | to url |
-    | IsRetryApplicationInProgress | NEXT | Parent Account | /landing |
     |  | NEXT | Parent Account | /par/acc/accounthomepage |
-    | IsRetryApplicationInProgress | NOFEEDBACK | Parent Account | /landing |
     |  | NOFEEDBACK | Parent Account | /par/acc/accounthomepage |
-
-Scenario: Parent Account page /par/app/survey with action NEXT rules are ordered correctly
-    When the user clicks "NEXT"
-    Then these rules are executed in order:
-        | IsRetryApplicationInProgress |
-
-Scenario: Parent Account page /par/app/survey with action NOFEEDBACK rules are ordered correctly
-    When the user clicks "NOFEEDBACK"
-    Then these rules are executed in order:
-        | IsRetryApplicationInProgress |
 

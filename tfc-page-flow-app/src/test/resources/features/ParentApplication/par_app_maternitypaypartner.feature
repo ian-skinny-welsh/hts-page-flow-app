@@ -15,25 +15,14 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelected | NEXT | Parent Application | /par/app/returntoworkdatepartner |
-    | IfSomeButNoAllChildrenSelected | NEXT | Parent Application | /par/app/returntoworkdatepartner |
-    | IfAllChildrenSelected | NEXT | Parent Application | /par/app/returntoworkdatepartner |
     | IfAllChildrenSelected | NEXT | Parent Application | /par/app/returntoworkdatepartner |
     | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
-    |  | NEXT | Parent Application | /par/app/parentminincome |
     |  | NEXT | Parent Application | /par/app/parentminincome |
 
 Scenario: Parent Application page /par/app/maternitypaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
         | IfAllChildrenSelected |
-        | IfAllChildrenSelected |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
         | IfSelectedAdoptionPay |
 

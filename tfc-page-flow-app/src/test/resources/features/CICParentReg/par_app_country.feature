@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IsEnglandSelected | NEXT | CIC Parent Reg | /par/app/jointapplication |
     |  | NEXT | CIC Parent Reg | /par/app/parentnationality |
-    |  | NEXT | CIC Parent Reg | /par/app/parentnationality |
 
 Scenario: CIC Parent Reg page /par/app/country with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

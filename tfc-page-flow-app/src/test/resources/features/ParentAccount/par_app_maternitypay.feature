@@ -15,41 +15,20 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdate |
-    | IfSomeButNoAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdate |
-    | IfAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdate |
     | IfAllChildrenSelected | NEXT | Parent Account | /par/app/returntoworkdate |
     | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfSelectedAdoptionPay | NEXT | Parent Account | /par/app/adoptionpay |
-    | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
     | IfSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
     | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
-    | IfNotSelectedQualifyingBenefitsAndHasNotPartner | NEXT | Parent Account | /par/app/parentminincome |
     | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    | IfHasPartner | NEXT | Parent Account | /par/app/partnertype |
-    |  | NEXT | Parent Account | /par/app/parentminincome |
     |  | NEXT | Parent Account | /par/app/parentminincome |
 
 Scenario: Parent Account page /par/app/maternitypay with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
-        | IfAllChildrenSelected |
         | IfAllChildrenSelected |
         | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedAdoptionPay |
-        | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfSelectedQualifyingBenefitsAndHasNotPartner |
         | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfNotSelectedQualifyingBenefitsAndHasNotPartner |
-        | IfHasPartner |
-        | IfHasPartner |
-        | IfHasPartner |
         | IfHasPartner |
 

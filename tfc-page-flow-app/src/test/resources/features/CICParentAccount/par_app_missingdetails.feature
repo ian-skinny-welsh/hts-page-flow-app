@@ -16,11 +16,8 @@ Examples:
     | rule | action | to website | to url |
     | missingDetailsParentSection | NEXT | CIC Parent Account | /par/app/country |
     | missingDetailsPartnerSection | NEXT | CIC Parent Account | /par/app/haspartner |
-    | missingDetailsChildSection | NEXT | CIC Parent Account | /par/app/childsname |
     | missingDetailsChildSection | NEXT | CIC Parent Account | /par/app/childsdetails |
     | missingDetailsChildrenSection | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | missingDetailsChildrenSection | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | missingDetailsEmploymentSection | NEXT | CIC Parent Account | /par/app/parenttype |
     | missingDetailsEmploymentSection | NEXT | CIC Parent Account | /par/app/parenttype |
     |  | NEXT | CIC Parent Account | /par/app/declaration |
 
@@ -30,9 +27,6 @@ Scenario: CIC Parent Account page /par/app/missingdetails with action NEXT rules
         | missingDetailsParentSection |
         | missingDetailsPartnerSection |
         | missingDetailsChildSection |
-        | missingDetailsChildSection |
         | missingDetailsChildrenSection |
-        | missingDetailsChildrenSection |
-        | missingDetailsEmploymentSection |
         | missingDetailsEmploymentSection |
 

@@ -15,12 +15,9 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | missingDetailsParentSection | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
-    | missingDetailsParentSection | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
     | missingDetailsPartnerSection | NEXT | CIC Parent Reg | /par/app/haspartner |
     | missingDetailsChildSection | NEXT | CIC Parent Reg | /par/app/childsdetails |
     | missingDetailsChildrenSection | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | missingDetailsChildrenSection | NEXT | CIC Parent Reg | /par/app/childrensummary |
-    | missingDetailsEmploymentSection | NEXT | CIC Parent Reg | /par/app/parenttype |
     | missingDetailsEmploymentSection | NEXT | CIC Parent Reg | /par/app/parenttype |
     |  | NEXT | CIC Parent Reg | /par/app/declaration |
 
@@ -28,11 +25,8 @@ Scenario: CIC Parent Reg page /par/app/missingdetails with action NEXT rules are
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | missingDetailsParentSection |
-        | missingDetailsParentSection |
         | missingDetailsPartnerSection |
         | missingDetailsChildSection |
         | missingDetailsChildrenSection |
-        | missingDetailsChildrenSection |
-        | missingDetailsEmploymentSection |
         | missingDetailsEmploymentSection |
 

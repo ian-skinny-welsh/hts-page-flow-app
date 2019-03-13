@@ -14,18 +14,6 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 
 Examples:
     | rule | action | to website | to url |
-    | IsEligibilityProcessingComplete | NEXT | Parent Application | /par/acc/accounthomepage |
     |  | NEXT | Parent Application | /landing |
-    | IsEligibilityProcessingComplete | NOFEEDBACK | Parent Application | /par/acc/accounthomepage |
     |  | NOFEEDBACK | Parent Application | /landing |
-
-Scenario: Parent Application page /par/app/survey with action NEXT rules are ordered correctly
-    When the user clicks "NEXT"
-    Then these rules are executed in order:
-        | IsEligibilityProcessingComplete |
-
-Scenario: Parent Application page /par/app/survey with action NOFEEDBACK rules are ordered correctly
-    When the user clicks "NOFEEDBACK"
-    Then these rules are executed in order:
-        | IsEligibilityProcessingComplete |
 

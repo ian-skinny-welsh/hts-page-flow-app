@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IsDisabledRollOutOption | NEXT | CIC Parent Reg | /par/app/rolloutmessage |
     |  | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
-    |  | NEXT | CIC Parent Reg | /par/app/parentdetailsentry |
 
 Scenario: CIC Parent Reg page /par/app/rolloutdisability with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

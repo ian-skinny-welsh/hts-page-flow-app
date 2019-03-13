@@ -14,6 +14,5 @@ Scenario Outline: The next page from website Parent Account is correctly display
 
 Examples:
     | rule | action | to website | to url |
-    |  | NEXT | Parent Account | /ccp/signup/rsaquestions/2 |
     |  | NEXT | Parent Account | /par/app/rsaquestions/2 |
 

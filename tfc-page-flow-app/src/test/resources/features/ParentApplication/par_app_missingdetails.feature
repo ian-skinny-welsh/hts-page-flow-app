@@ -18,8 +18,6 @@ Examples:
     | missingDetailsPartnerSection | NEXT | Parent Application | /par/app/haspartner |
     | missingDetailsChildSection | NEXT | Parent Application | /par/app/childsname |
     | missingDetailsChildrenSection | NEXT | Parent Application | /par/app/childrensummary |
-    | missingDetailsChildrenSection | NEXT | Parent Application | /par/app/childrensummary |
-    | missingDetailsEmploymentSection | NEXT | Parent Application | /par/app/parenttype |
     | missingDetailsEmploymentSection | NEXT | Parent Application | /par/app/parenttype |
     |  | NEXT | Parent Application | /par/app/declaration |
 
@@ -30,7 +28,5 @@ Scenario: Parent Application page /par/app/missingdetails with action NEXT rules
         | missingDetailsPartnerSection |
         | missingDetailsChildSection |
         | missingDetailsChildrenSection |
-        | missingDetailsChildrenSection |
-        | missingDetailsEmploymentSection |
         | missingDetailsEmploymentSection |
 

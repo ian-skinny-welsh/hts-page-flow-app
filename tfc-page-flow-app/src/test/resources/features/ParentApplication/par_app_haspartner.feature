@@ -16,14 +16,12 @@ Examples:
     | rule | action | to website | to url |
     | IfTheHasPartnerIsTrue | NEXT | Parent Application | /par/app/partnername |
     | IfTheHasPartnerIsFalseAndHasChildrenInSystem | NEXT | Parent Application | /par/app/childrensummary |
-    | IfTheHasPartnerIsFalseAndHasChildrenInSystem | NEXT | Parent Application | /par/app/childrensummary |
     | IfTheHasPartnerIsFalseAndNoChildrenInSystem | NEXT | Parent Application | /par/app/childsname |
 
 Scenario: Parent Application page /par/app/haspartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfTheHasPartnerIsTrue |
-        | IfTheHasPartnerIsFalseAndHasChildrenInSystem |
         | IfTheHasPartnerIsFalseAndHasChildrenInSystem |
         | IfTheHasPartnerIsFalseAndNoChildrenInSystem |
 

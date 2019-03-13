@@ -16,8 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEAndSelectedTaxCredits | NEXT | CIC Parent Account | /par/app/taxcredits |
     | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits | NEXT | CIC Parent Account | /par/app/parenttype |
-    | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits | NEXT | CIC Parent Account | /par/app/parenttype |
-    | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE | NEXT | CIC Parent Account | /par/app/parenttype |
     | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE | NEXT | CIC Parent Account | /par/app/parenttype |
     | SelectedMoreOptionsAndQualifiesForDFE | NEXT | CIC Parent Account | /par/app/mustleaveschemes |
     |  | NEXT | CIC Parent Account | /par/app/cvsdeclaration |
@@ -27,8 +25,6 @@ Scenario: CIC Parent Account page /par/app/registeredschemes with action NEXT ru
     Then these rules are executed in order:
         | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEAndSelectedTaxCredits |
         | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits |
-        | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits |
-        | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE |
         | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE |
         | SelectedMoreOptionsAndQualifiesForDFE |
 

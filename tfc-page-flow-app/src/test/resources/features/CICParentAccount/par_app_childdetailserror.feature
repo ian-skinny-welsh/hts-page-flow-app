@@ -15,13 +15,10 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | IfHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
     |  | NEXT | CIC Parent Account | /par/app/childsdetails |
-    |  | NEXT | CIC Parent Account | /par/app/childsname |
 
 Scenario: CIC Parent Account page /par/app/childdetailserror with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfHasChildrenInSystem |
         | IfHasChildrenInSystem |
 

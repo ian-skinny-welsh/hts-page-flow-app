@@ -17,7 +17,6 @@ Examples:
     | ContinueAndAddAnotherEmployer | ADDANOTHER | Parent Application | /par/app/employeraddress |
     | ContinueAndDisplayOtherEmployer | CONTINUE | Parent Application | /par/app/employeraddress |
     |  | CONTINUE | Parent Application | /par/app/parenttype |
-    |  | CONTINUE | Parent Application | /par/app/parenttype |
 
 Scenario: Parent Application page /par/app/employeraddress with action CONTINUE rules are ordered correctly
     When the user clicks "CONTINUE"

@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | invalidUTRorNINO | NEXT | CCP Signup | /ccp/signup/thankyoureenter |
     |  | NEXT | CCP Signup | /ccp/signup/thankyoufeedback |
-    |  | NEXT | CCP Signup | /ccp/signup/thankyoufeedback |
 
 Scenario: CCP Signup page /ccp/signup/rsaphonenumber with action NEXT rules are ordered correctly
     When the user clicks "NEXT"

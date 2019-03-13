@@ -15,7 +15,4 @@ Scenario Outline: The next page from website CCP Signup is correctly displayed
 Examples:
     | rule | action | to website | to url |
     |  | NEXT | CCP Signup | /ccp/signup/registereddetails |
-    |  | NEXT | CCP Signup | /ccp/signup/registereddetails |
-    |  | NEXT | CCP Signup | /ccp/signup/registereddetails |
-    |  | NEXT | CCP Signup | /ccp/signup/registereddetails |
 

@@ -15,13 +15,10 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfAppliedMoreThan6WeeksAgo | NEXT | CIC Parent Account | /par/app/exit |
-    | IfAppliedMoreThan6WeeksAgo | NEXT | CIC Parent Account | /par/app/exit |
-    |  | NEXT | CIC Parent Account | /par/app/otherleavepaytype |
     |  | NEXT | CIC Parent Account | /par/app/otherleavepaytype |
 
 Scenario: CIC Parent Account page /par/app/parentselfemployapplied with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfAppliedMoreThan6WeeksAgo |
         | IfAppliedMoreThan6WeeksAgo |
 

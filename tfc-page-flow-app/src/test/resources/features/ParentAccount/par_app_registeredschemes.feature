@@ -16,8 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEAndSelectedTaxCredits | NEXT | Parent Account | /par/app/taxcredits |
     | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits | NEXT | Parent Account | /par/app/parenttype |
-    | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits | NEXT | Parent Account | /par/app/parenttype |
-    | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE | NEXT | Parent Account | /par/app/parenttype |
     | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE | NEXT | Parent Account | /par/app/parenttype |
     | SelectedMoreOptionsAndQualifiesForDFE | NEXT | Parent Account | /par/app/mustleaveschemes |
     |  | NEXT | Parent Account | /par/app/cvsdeclaration |
@@ -27,8 +25,6 @@ Scenario: Parent Account page /par/app/registeredschemes with action NEXT rules 
     Then these rules are executed in order:
         | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEAndSelectedTaxCredits |
         | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits |
-        | OnlySelectedWorkPlaceNurserySchemaAndQualifiesForDFEButNotSelectedTaxCredits |
-        | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE |
         | OnlySelectedWorkPlaceNurserySchemaButNotQualifiesForDFE |
         | SelectedMoreOptionsAndQualifiesForDFE |
 

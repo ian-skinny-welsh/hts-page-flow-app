@@ -15,17 +15,12 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNoAllChildrenSelected | NEXT | CIC Parent Account | /par/app/returntoworkdatepartner |
-    | IfSomeButNoAllChildrenSelected | NEXT | CIC Parent Account | /par/app/returntoworkdatepartner |
     | IfAllChildrenSelected | NEXT | CIC Parent Account | /par/app/returntoworkdatepartner |
-    | IfAllChildrenSelected | NEXT | CIC Parent Account | /par/app/returntoworkdatepartner |
-    |  | NEXT | CIC Parent Account | /par/app/worksummary |
     |  | NEXT | CIC Parent Account | /par/app/worksummary |
 
 Scenario: CIC Parent Account page /par/app/maternitypaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNoAllChildrenSelected |
-        | IfSomeButNoAllChildrenSelected |
-        | IfAllChildrenSelected |
         | IfAllChildrenSelected |
 

@@ -15,7 +15,4 @@ Scenario Outline: The next page from website Parent Account is correctly display
 Examples:
     | rule | action | to website | to url |
     |  | NEXT | Parent Account | /par/app/parentdetailsaddressentry |
-    |  | NEXT | Parent Account | /par/app/parentdetailsaddressentry |
-    |  | NEXT | Parent Account | /par/app/parentdetailsaddressentry |
-    |  | NEXT | Parent Account | /par/app/parentdetailsaddressentry |
 

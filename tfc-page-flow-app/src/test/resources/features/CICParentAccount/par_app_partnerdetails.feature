@@ -15,31 +15,13 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndHasChildrenInSystem | NEXT | CIC Parent Account | /par/app/childrensummary |
-    | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Account | /par/app/childsname |
     | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Account | /par/app/childsdetails |
-    | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Account | /par/app/childsdetails |
-    | IfPartnerLivesAtSameAddressAndNoChildrenInSystem | NEXT | CIC Parent Account | /par/app/childsname |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Account | /par/app/partneraddress |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Account | /par/app/partneraddress |
-    | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Account | /par/app/partneraddress |
     | IfPartnerDoesNotLiveAtSameAddress | NEXT | CIC Parent Account | /par/app/partneraddress |
 
 Scenario: CIC Parent Account page /par/app/partnerdetails with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndHasChildrenInSystem |
         | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerLivesAtSameAddressAndNoChildrenInSystem |
-        | IfPartnerDoesNotLiveAtSameAddress |
-        | IfPartnerDoesNotLiveAtSameAddress |
-        | IfPartnerDoesNotLiveAtSameAddress |
         | IfPartnerDoesNotLiveAtSameAddress |
 

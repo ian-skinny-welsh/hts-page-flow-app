@@ -15,15 +15,11 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | NavFromPartnerApprenticeMinPayToExit | NEXT | CIC Parent Account | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToExit | NEXT | CIC Parent Account | /par/app/exit |
-    | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | CIC Parent Account | /par/app/maxpaythreshold |
     | NavFromPartnerApprenticeMinPayToMaxPayThreshold | NEXT | CIC Parent Account | /par/app/maxpaythreshold |
 
 Scenario: CIC Parent Account page /par/app/apprenticeminpaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToExit |
-        | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
         | NavFromPartnerApprenticeMinPayToMaxPayThreshold |
 

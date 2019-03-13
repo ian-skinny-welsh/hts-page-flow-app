@@ -15,41 +15,18 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
     | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedOwnCompanyDirector | NEXT | CIC Parent Reg | /par/app/workstartdatepartner |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/partnerselfemploy |
-    | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/partnerselfemploy |
     | IfSelectedSelfEmployed | NEXT | CIC Parent Reg | /par/app/partnerselfemploy |
     | IfOnlySelectedNotInEmployment | NEXT | CIC Parent Reg | /par/app/exit |
-    | IfOnlySelectedNotInEmployment | NEXT | CIC Parent Reg | /par/app/exit |
     | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits | NEXT | CIC Parent Reg | /par/app/exit |
-    | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits | NEXT | CIC Parent Reg | /par/app/exit |
-    |  | NEXT | CIC Parent Reg | /par/app/otherleavepaytypepartner |
     |  | NEXT | CIC Parent Reg | /par/app/otherleavepaytypepartner |
 
 Scenario: CIC Parent Reg page /par/app/partnertype with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
-        | IfSelectedPaidEmploymentOrDueToStartInTheNext14Days |
         | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedOwnCompanyDirector |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
-        | IfSelectedSelfEmployed |
         | IfSelectedSelfEmployed |
         | IfOnlySelectedNotInEmployment |
-        | IfOnlySelectedNotInEmployment |
-        | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits |
         | IfOnlySelectedBenefitsAndParentOnlySelectedBenefits |
 

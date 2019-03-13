@@ -15,8 +15,6 @@ Scenario Outline: The next page from website Parent Application is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSelectedMaternityOrPaternityLeave | NEXT | Parent Application | /par/app/maternitypaypartner |
-    | IfSelectedMaternityOrPaternityLeave | NEXT | Parent Application | /par/app/maternitypaypartner |
-    | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
     | IfSelectedAdoptionPay | NEXT | Parent Application | /par/app/adoptionpaypartner |
     | IfOnlySelectedCarersAllowanceForBoth | NEXT | Parent Application | /par/app/exit |
     | IfOnlySelectedNotInEmployment | NEXT | Parent Application | /par/app/exit |
@@ -27,8 +25,6 @@ Scenario: Parent Application page /par/app/otherleavepaytypepartner with action 
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSelectedMaternityOrPaternityLeave |
-        | IfSelectedMaternityOrPaternityLeave |
-        | IfSelectedAdoptionPay |
         | IfSelectedAdoptionPay |
         | IfOnlySelectedCarersAllowanceForBoth |
         | IfOnlySelectedNotInEmployment |

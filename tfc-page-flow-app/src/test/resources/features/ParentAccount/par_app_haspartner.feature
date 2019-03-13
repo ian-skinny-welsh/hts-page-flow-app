@@ -16,7 +16,6 @@ Examples:
     | rule | action | to website | to url |
     | IfTheHasPartnerIsTrue | NEXT | Parent Account | /par/app/partnername |
     | IfTheHasPartnerIsFalseAndHasChildrenInSystem | NEXT | Parent Account | /par/app/childrensummary |
-    | IfTheHasPartnerIsFalseAndNoChildrenInSystem | NEXT | Parent Account | /par/app/childsdetails |
     | IfTheHasPartnerIsFalseAndNoChildrenInSystem | NEXT | Parent Account | /par/app/childsname |
 
 Scenario: Parent Account page /par/app/haspartner with action NEXT rules are ordered correctly
@@ -24,6 +23,5 @@ Scenario: Parent Account page /par/app/haspartner with action NEXT rules are ord
     Then these rules are executed in order:
         | IfTheHasPartnerIsTrue |
         | IfTheHasPartnerIsFalseAndHasChildrenInSystem |
-        | IfTheHasPartnerIsFalseAndNoChildrenInSystem |
         | IfTheHasPartnerIsFalseAndNoChildrenInSystem |
 

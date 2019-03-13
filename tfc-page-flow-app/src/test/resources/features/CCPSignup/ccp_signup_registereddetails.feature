@@ -15,23 +15,15 @@ Scenario Outline: The next page from website CCP Signup is correctly displayed
 Examples:
     | rule | action | to website | to url |
     | IsDetailsIncorrect | NEXT | CCP Signup | /ccp/signup/incorrectregistereddetails |
-    | IsDetailsIncorrect | NEXT | CCP Signup | /ccp/signup/incorrectregistereddetails |
-    | IsEmailAddressEmpty | NEXT | CCP Signup | /ccp/signup/enteremail |
     | IsEmailAddressEmpty | NEXT | CCP Signup | /ccp/signup/enteremail |
     | IsEmailAddressNotEmptyAndRegulatorIsMOD | NEXT | CCP Signup | /ccp/signup/bankaccountcountry |
-    | IsEmailAddressNotEmptyAndRegulatorIsMOD | NEXT | CCP Signup | /ccp/signup/bankaccountcountry |
-    | IsEmailAddressNotEmpty | NEXT | CCP Signup | /ccp/signup/utrchallenge |
     | IsEmailAddressNotEmpty | NEXT | CCP Signup | /ccp/signup/utrchallenge |
 
 Scenario: CCP Signup page /ccp/signup/registereddetails with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IsDetailsIncorrect |
-        | IsDetailsIncorrect |
-        | IsEmailAddressEmpty |
         | IsEmailAddressEmpty |
         | IsEmailAddressNotEmptyAndRegulatorIsMOD |
-        | IsEmailAddressNotEmptyAndRegulatorIsMOD |
-        | IsEmailAddressNotEmpty |
         | IsEmailAddressNotEmpty |
 

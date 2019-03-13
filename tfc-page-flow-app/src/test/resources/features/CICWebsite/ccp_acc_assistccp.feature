@@ -16,6 +16,5 @@ Examples:
     | rule | action | to website | to url |
     |  | ADV_SEARCH | CIC Website | /ccp/acc/ccpsearchadv |
     |  | REGISTER | CIC Website | /ccp/signup/signupcode |
-    |  | REGISTER | CIC Website | /ccp/signup/signupcode |
     |  | SEARCH | CIC Website | /ccp/acc/ccpsearchid |
 

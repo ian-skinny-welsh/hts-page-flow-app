@@ -15,29 +15,18 @@ Scenario Outline: The next page from website CIC Parent Account is correctly dis
 Examples:
     | rule | action | to website | to url |
     | IfSomeButNotAllChildrenSelected | NEXT | CIC Parent Account | /par/app/adoptionreturntoworkdatepartner |
-    | IfSomeButNotAllChildrenSelected | NEXT | CIC Parent Account | /par/app/adoptionreturntoworkdatepartner |
-    | IfAllChildrenSelected | NEXT | CIC Parent Account | /par/app/adoptionreturntoworkdatepartner |
     | IfAllChildrenSelected | NEXT | CIC Parent Account | /par/app/adoptionreturntoworkdatepartner |
     | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
-    | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
-    | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
     | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
     | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
-    | IfPartnerAndParentHaveSelectedQualifyingBenefits | NEXT | CIC Parent Account | /par/app/worksummary |
-    |  | NEXT | CIC Parent Account | /par/app/worksummary |
     |  | NEXT | CIC Parent Account | /par/app/worksummary |
 
 Scenario: CIC Parent Account page /par/app/adoptionpaypartner with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
         | IfSomeButNotAllChildrenSelected |
-        | IfSomeButNotAllChildrenSelected |
-        | IfAllChildrenSelected |
         | IfAllChildrenSelected |
         | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
-        | IfSelectedQualifyingBenefitsAndParentHasNotSelectedQualifyingBenefits |
         | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfNotSelectedStatutorySickPayAndQualifyingBenefitsButParentHasSelectedQualifyingBenefits |
-        | IfPartnerAndParentHaveSelectedQualifyingBenefits |
         | IfPartnerAndParentHaveSelectedQualifyingBenefits |
 

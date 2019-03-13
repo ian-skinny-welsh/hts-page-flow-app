@@ -15,17 +15,10 @@ Scenario Outline: The next page from website CIC Parent Reg is correctly display
 Examples:
     | rule | action | to website | to url |
     | IfAppliedForUTR | NEXT | CIC Parent Reg | /par/app/partnerselfemployapplied |
-    | IfAppliedForUTR | NEXT | CIC Parent Reg | /par/app/partnerselfemployapplied |
-    | IfAppliedForUTR | NEXT | CIC Parent Reg | /par/app/partnerselfemployapplied |
-    | IfAppliedForUTR | NEXT | CIC Parent Reg | /par/app/partnerselfemployapplied |
-    |  | NEXT | CIC Parent Reg | /par/app/exit |
     |  | NEXT | CIC Parent Reg | /par/app/exit |
 
 Scenario: CIC Parent Reg page /par/app/partnerselfemployno with action NEXT rules are ordered correctly
     When the user clicks "NEXT"
     Then these rules are executed in order:
-        | IfAppliedForUTR |
-        | IfAppliedForUTR |
-        | IfAppliedForUTR |
         | IfAppliedForUTR |
 
