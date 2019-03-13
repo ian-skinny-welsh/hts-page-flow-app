@@ -71,4 +71,44 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.slinkyframework.environment</groupId>
+                <artifactId>slinky-environment-builder-maven-plugin</artifactId>
+                <version>${slinky-environment-builder.version}</version>
+                <executions>
+                    <execution>
+                        <id>env.setup</id>
+                        <goals>
+                            <goal>setup</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>env.teardown</id>
+                        <goals>
+                            <goal>teardown</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.oracle</groupId>
+                        <artifactId>ojdbc6</artifactId>
+                        <version>${ojdbc6.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>net.atos.tfc.batch</groupId>
+                        <artifactId>tfc-repository-setup</artifactId>
+                        <version>${tfc.repository.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <useDocker>${env.ENV_DOCKER}</useDocker>
+                    <host>${env.ENV_HOST}</host>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

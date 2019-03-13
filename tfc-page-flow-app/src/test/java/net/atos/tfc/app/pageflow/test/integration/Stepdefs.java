@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -94,6 +96,12 @@ public class Stepdefs extends CucumberRoot
 	@Then("^these rules are executed in order:")
 	public void these_rules_are_executed_in_order(List<String> rules)
 	{
+		List<String> expectedRules = pageFlows.stream()
+				.sorted(Comparator.comparing(Row::getOptionI))
+				.map(Row::getRule)
+				.collect(Collectors.toList());
+		expectedRules.removeAll(Arrays.asList("",null));
 
+		assertThat(expectedRules, is(rules));
 	}
 }
