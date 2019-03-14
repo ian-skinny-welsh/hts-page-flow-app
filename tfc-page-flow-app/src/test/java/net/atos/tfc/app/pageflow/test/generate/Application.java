@@ -28,6 +28,7 @@ public class Application implements CommandLineRunner
         gt.setPageFlowSQLPath("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/cfg_page_flow.sql");
         gt.setFeatureTemplate("template.feature");
         gt.setTemplateDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources");
+        gt.setGraphDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/graph");
 
         gt.setDataSource(dataSource);
         gt.generate();

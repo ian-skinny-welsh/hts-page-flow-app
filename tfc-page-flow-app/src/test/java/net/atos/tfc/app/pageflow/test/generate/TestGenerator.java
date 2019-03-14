@@ -46,6 +46,7 @@ public class TestGenerator
 
 	private String templateDirectory;
 	private DataSource dataSource;
+	private String graphDirectory;
 
 
 	public void generate() throws IOException, ParseException, MalformedTemplateNameException, TemplateException
@@ -87,6 +88,11 @@ public class TestGenerator
 
 		rowsMap.forEach((uri,rows) -> generateFeatues(website, rows, uri));
 
+		createWebsiteChart(website, rowsMap);
+	}
+
+	private void createWebsiteChart(Website website, Map<String, List<Row>> rowsMap)
+	{
 		MutableGraph g = mutGraph(website.getName()).setDirected(true)
 				.graphAttrs()
 					.add(RankDir.LEFT_TO_RIGHT)
@@ -102,8 +108,9 @@ public class TestGenerator
 		{
 			Graphviz
 					.fromGraph(g)
+					.height(1200)
 					.render(Format.PNG)
-					.toFile(new File("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/graph/"+website.getName()+".png"));
+					.toFile(new File(String.format("%s/%s.png",graphDirectory,website.getName())));
 
 		}
 		catch (IOException e)
@@ -122,9 +129,11 @@ public class TestGenerator
 			}
 			else
 			{
-				linkAttrs().add(Color.RED, Label.of(r.getRule()));
+				linkAttrs().add(Color.RED, Label.of(String.format("%s : %s",r.getAction(),r.getRule())));
 			}
-			graphAttrs().add(SplineMode.SPLINE.name(),true);
+
+			graphAttrs().add(SplineMode.ORTHO.name(),true);
+			graphAttrs().add(Rank.SAME);
 			nodeAttrs().add(Shape.RECTANGLE);
 			mutNode(uri).addLink(mutNode(r.getToURI()));
 		});
@@ -226,5 +235,13 @@ public class TestGenerator
 
 	public DataSource getDataSource() {
 		return dataSource;
+	}
+
+	public void setGraphDirectory(String graphDirectory) {
+		this.graphDirectory = graphDirectory;
+	}
+
+	public String getGraphDirectory() {
+		return graphDirectory;
 	}
 }
