@@ -36,8 +36,8 @@
 </g>
 <!-- /&#45;&gt;/updateregulatordetails -->
 <g id="edge3" class="edge"><title>/&#45;&gt;/updateregulatordetails</title>
-<path fill="none" stroke="red" d="M332.366,-61.441C338.137,-59.5091 344.242,-57.5865 350,-56 382.335,-47.0904 418.443,-39.0667 449.713,-32.7134"/>
-<polygon fill="red" stroke="red" points="450.57,-36.1113 459.685,-30.7104 449.191,-29.2484 450.57,-36.1113"/>
+<path fill="none" stroke="red" d="M332.104,-62.1011C341.578,-58.8711 350,-56 350,-56 350,-56 402.01,-44.9587 449.96,-34.7795"/>
+<polygon fill="red" stroke="red" points="450.739,-38.1922 459.794,-32.6918 449.285,-31.3448 450.739,-38.1922"/>
 <text text-anchor="middle" x="396" y="-59.8" font-family="Times,serif" font-size="14.00">UPDATEREG : </text>
 </g>
 <!-- /updateregulatordetails&#45;&gt;/updateregulatordetails -->

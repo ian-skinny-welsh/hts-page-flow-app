@@ -6,6 +6,7 @@ import guru.nidi.graphviz.attribute.*;
 import guru.nidi.graphviz.attribute.GraphAttr.SplineMode;
 import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
+import guru.nidi.graphviz.model.Graph;
 import guru.nidi.graphviz.model.MutableGraph;
 import net.atos.tfc.app.pageflow.test.util.PageFlowMapper;
 import net.atos.tfc.app.pageflow.test.util.Sql;
@@ -132,8 +133,7 @@ public class TestGenerator
 				linkAttrs().add(Color.RED, Label.of(String.format("%s : %s",r.getAction(),r.getRule())));
 			}
 
-			graphAttrs().add(SplineMode.ORTHO.name(),true);
-			graphAttrs().add(Rank.SAME);
+			graphAttrs().add("splines",SplineMode.POLYLINE.name());
 			nodeAttrs().add(Shape.RECTANGLE);
 			mutNode(uri).addLink(mutNode(r.getToURI()));
 		});
