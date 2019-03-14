@@ -110,7 +110,7 @@ public class TestGenerator
 					.fromGraph(g)
 					.height(1200)
 					.render(Format.SVG)
-					.toFile(new File(String.format("%s/%s.html",graphDirectory,website.getName())));
+					.toFile(new File(String.format("%s/%s.svg",graphDirectory,website.getName())));
 
 		}
 		catch (IOException e)
