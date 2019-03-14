@@ -124,7 +124,7 @@ public class TestGenerator
 	{
 		rows.forEach(r->
 		{
-			if("NEXT".equals(r.getAction()))
+			if("NEXT".equals(r.getAction())||"CONTINUE".equals(r.getAction()))
 			{
 				linkAttrs().add(Style.SOLID, Label.of(r.getRule()));
 			}
