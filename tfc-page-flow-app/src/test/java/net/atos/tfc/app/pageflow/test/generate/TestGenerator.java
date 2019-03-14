@@ -126,11 +126,11 @@ public class TestGenerator
 		{
 			if("NEXT".equals(r.getAction()))
 			{
-				linkAttrs().add(Color.BLACK, Label.of(r.getRule()));
+				linkAttrs().add(Style.SOLID, Label.of(r.getRule()));
 			}
 			else
 			{
-				linkAttrs().add(Color.RED, Label.of(String.format("%s : %s",r.getAction(),r.getRule())));
+				linkAttrs().add(Style.DASHED, Label.of(String.format("%s : %s",r.getAction(),r.getRule())));
 			}
 
 			graphAttrs().add("splines",SplineMode.POLYLINE.name());
