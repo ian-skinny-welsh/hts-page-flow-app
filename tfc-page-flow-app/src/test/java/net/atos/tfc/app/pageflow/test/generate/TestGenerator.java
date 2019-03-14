@@ -109,8 +109,8 @@ public class TestGenerator
 			Graphviz
 					.fromGraph(g)
 					.height(1200)
-					.render(Format.PNG)
-					.toFile(new File(String.format("%s/%s.png",graphDirectory,website.getName())));
+					.render(Format.SVG)
+					.toFile(new File(String.format("%s/%s.html",graphDirectory,website.getName())));
 
 		}
 		catch (IOException e)
@@ -153,7 +153,7 @@ public class TestGenerator
 		{
 			Template temp = cfg.getTemplate(featureTemplate);
 
-			Path dirPathObj = Paths.get(baseDirectory + website.getName().replace(" ", ""));
+			Path dirPathObj = Paths.get(baseDirectory+"/" + website.getName().replace(" ", ""));
 			if (!Files.exists(dirPathObj))
 			{
 				Files.createDirectories(dirPathObj);

@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.sql.DataSource;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner
@@ -24,11 +26,14 @@ public class Application implements CommandLineRunner
     {
         TestGenerator gt = new TestGenerator();
 
-        gt.setBaseDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/features/");
-        gt.setPageFlowSQLPath("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/cfg_page_flow.sql");
+        Path currentDir = Paths.get("tfc-page-flow-app");
+        Path testResources = currentDir.resolve("src").resolve("test").resolve("resources");
+
+        gt.setBaseDirectory(testResources.resolve("features").toAbsolutePath().toString());
+        gt.setPageFlowSQLPath(testResources.resolve("cfg_page_flow.sql").toAbsolutePath().toString());
         gt.setFeatureTemplate("template.feature");
-        gt.setTemplateDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources");
-        gt.setGraphDirectory("/appl/git/tfc-page-flow-app/tfc-page-flow-app/src/test/resources/graph");
+        gt.setTemplateDirectory(testResources.toAbsolutePath().toString());
+        gt.setGraphDirectory(testResources.resolve("graph").toAbsolutePath().toString());
 
         gt.setDataSource(dataSource);
         gt.generate();
