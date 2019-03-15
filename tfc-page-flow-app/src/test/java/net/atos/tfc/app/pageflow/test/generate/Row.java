@@ -9,7 +9,7 @@ public class Row
 	private String fromName;
 	private String uri;
 	private String toURI;
-	private String option;
+	private Long option;
 	private String rule;
 	private String toName;
 	private String toID;
@@ -31,17 +31,15 @@ public class Row
 		this.fromName = fromName;
 	}
 
-	public String getOption()
+	public Long getOption()
 	{
 		return option;
 	}
 
-	public void setOption(String option)
+	public void setOption(Long option)
 	{
 		this.option = option;
 	}
-
-	public Integer getOptionI()	{return Integer.valueOf(option);}
 
 	public String getRule()
 	{

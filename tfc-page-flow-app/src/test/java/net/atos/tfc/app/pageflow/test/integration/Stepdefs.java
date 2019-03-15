@@ -91,7 +91,7 @@ public class Stepdefs extends CucumberRoot
 	public void these_rules_are_executed_in_order(List<String> rules)
 	{
 		List<String> expectedRules = pageFlows.stream()
-				.sorted(Comparator.comparing(Row::getOptionI))
+				.sorted(Comparator.comparing(Row::getOption))
 				.map(Row::getRule)
 				.collect(Collectors.toList());
 		expectedRules.removeAll(asList("",null));

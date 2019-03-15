@@ -1,25 +1,34 @@
 package net.atos.tfc.app.pageflow.test.integration;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import net.atos.tfc.app.pageflow.test.util.TemplateFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Configuration
 @EnableAutoConfiguration
-//@ComponentScan({"net.atos.tfc.app.pageflow.test.generate","net.atos.tfc.app.pageflow.test.integration","net.atos.tfc.app.pageflow.test.util"})
 public class Config
 {
+
     @Bean
     public PageFlowDriver pageFlowDriver(DataSource dataSource)
     {
-        return new PageFlowDriver(dataSource);
+        Path currentDir = Paths.get("tfc-page-flow-app");
+        Path scriptResources = currentDir.resolve("src").resolve("test").resolve("resources").resolve("scripts");
+
+        return new PageFlowDriver(dataSource, scriptResources);
+    }
+
+    @Bean
+    public TemplateFactory templateFactory()
+    {
+        Path currentDir = Paths.get("tfc-page-flow-app");
+        Path testResources = currentDir.resolve("src").resolve("test").resolve("resources");
+
+        return new TemplateFactory(testResources);
     }
 }

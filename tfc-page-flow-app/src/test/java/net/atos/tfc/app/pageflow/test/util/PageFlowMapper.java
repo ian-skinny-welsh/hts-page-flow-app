@@ -6,7 +6,8 @@ import org.springframework.lang.Nullable;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Optional;
+
+import static java.util.Optional.ofNullable;
 
 public class PageFlowMapper implements RowMapper<Row>
 {
@@ -20,8 +21,8 @@ public class PageFlowMapper implements RowMapper<Row>
         row.setFromName(resultSet.getString(3));
         row.setToID(resultSet.getString(4));
         row.setToName(resultSet.getString(5));
-        row.setOption(resultSet.getString(6));
-        row.setRule(Optional.ofNullable(resultSet.getString(7)).orElse(""));
+        row.setOption(resultSet.getLong(6));
+        row.setRule(ofNullable(resultSet.getString(7)).orElse(""));
         row.setAction(resultSet.getString(8));
         row.setToWebsite(resultSet.getString(9));
         row.setToURI(resultSet.getString(10));
