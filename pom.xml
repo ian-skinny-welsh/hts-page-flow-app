@@ -13,7 +13,7 @@
     </modules>
 
     <scm>
-        <connection>scm:git:https://github.com/atos-tfc/tfc-repository.git</connection>
+        <connection>scm:git:https://github.com/atos-tfc/tfc-page-flow-app.git</connection>
         <tag>HEAD</tag>
     </scm>
 
